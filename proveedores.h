@@ -1,19 +1,21 @@
 #pragma once
-#include <string>
+#include "persona.h"
 
-class Categoria{
-    public:
-        Categoria();
-        void setID(int id);
-        void setNombre(char* nombre);
-        int getID();
-        char getNombre();
-        void cargar();
-        void mostrar();
-        bool escribirDisco(int pos);
-        bool leerDisco(int pos);
-
-    private:
-        int _ID;
-        char _nombre[50];
+class Proveedores:public Persona{
+public:
+    Proveedores();
+    void setIdproducto(int id);
+    void setCantidad(int cantidad);
+    void setPreciototal(float precioTotal);
+    int getIdproducto();
+    int getCantidad();
+    float getPreciototal();
+    void cargar();
+    void mostrar();
+    bool escribirDisco(int pos);
+    bool leerDisco(int pos);
+private:
+    int _Idproducto;
+    int _Cantidad;
+    float _PrecioTotal;
 };

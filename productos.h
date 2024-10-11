@@ -12,12 +12,12 @@ class Producto{
         void setStock(int valor);
         void setDescripcion(char* descripcion);
         int getIDProducto();
-        char getNombre();
-        char getCategoria();
+        const char* getNombre();
+        const char* getCategoria();
         float getPrecio();
-        int getIngreso();
+        const char* getIngreso();
         int getStock();
-        char getDescripcion();
+        const char* getDescripcion();
         void cargar();
         void mostrar();
         bool escribirDisco(int pos);
@@ -28,7 +28,7 @@ class Producto{
         char _nombre[100];
         char _IDCategoria[100];
         float _precio;
-        char _ingreso;
+        char _ingreso[15];
         int _stock;
         char _descripcion[200];
 

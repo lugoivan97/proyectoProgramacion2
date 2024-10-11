@@ -11,10 +11,10 @@ class Venta{
         void setFormaDePago(char* fp);
         void setEnvio(bool envio);
         int getID();
-        char getFecha();
+        const char* getFecha();
         int getIDCliente();
         int getIDVendedor();
-        char getFormaDePago();
+        const char* getFormaDePago();
         bool getEnvio();
         void cargar();
         void mostrar();

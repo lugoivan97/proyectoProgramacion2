@@ -5,7 +5,7 @@ using namespace std;
 
 Categoria::Categoria(){
     _ID=0;
-    _nombre[50]="nombre";
+    std::string _nombre="nombre";
 }
 
 void Categoria::setID(int id){

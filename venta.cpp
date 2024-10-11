@@ -1,13 +1,15 @@
 #include "venta.h"
 #include <cstring>
+#include <iostream>
+
 using namespace std;
 
 Venta::Venta(){
     _ID=0;
-    _fecha[15]="fecha";
+    std::string _fecha= "10/10/2024";
     _idCliente=0;
     _idVendedor=0;
-    _formaDePago[50]="fp";
+    std::string _formaDePago= "fp";
     _envio=0;
 }
 
@@ -39,7 +41,7 @@ int Venta::getID(){
     return _ID;
 }
 
-char Venta::getFecha(){
+const char* Venta::getFecha(){
     return _fecha;
 }
 
@@ -51,7 +53,7 @@ int Venta::getIDVendedor(){
     return _idVendedor;
 }
 
-char Venta::getFormaDePago(){
+const char* Venta::getFormaDePago(){
     return _formaDePago;
 }
 
@@ -60,9 +62,27 @@ bool Venta::getEnvio(){
 }
 
 void Venta::cargar(){
+    cout<< "INGRESAR EL ID: ";
+    cin>>_ID;
+    cout<< "INGRESAR LA FECHA: ";
+    cin>>_fecha;
+    cout<< "INGRESAR EL ID DEL CLIENTE: ";
+    cin>>_idCliente;
+    cout<< "INGRESAR EL ID DEL VENDEDOR: ";
+    cin>>_idVendedor;
+    cout<< "INGRESAR FORMA DE PAGO: ";
+    cin>>_formaDePago;
+    cout<< "INGRESAR SI TIENE ENVIO O NO: ";
+    cin>>_envio;
 }
 
 void Venta::mostrar(){
+    cout<< "EL ID ES: "<<_ID<<endl;
+    cout<< "LA FECHA ES: "<<_fecha<<endl;
+    cout<< "EL ID DEL CLIENTE ES: "<<_idCliente<<endl;
+    cout<< "EL ID DEL VENDEDOR ES. "<<_idVendedor<<endl;
+    cout<< "LA FORMA DE PAGO ES: "<<_formaDePago<<endl;
+    cout<< "TIENE ENVIO O NO: "<<_envio<<endl;
 }
 
 bool Venta::escribirDisco(int pos){

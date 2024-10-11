@@ -1,11 +1,12 @@
 #include "devoluciones.h"
 #include <cstring>
+#include <string>
 
 using namespace std;
 
 Devoluciones::Devoluciones(){
     _IDProducto=0;
-    _ingresoDevolucion[15]="fecha";
+    std::string _ingresoDevolucion= "fecha";
     _IDCliente=0;
     _posDevolucion=0;
 }
@@ -14,7 +15,7 @@ void Devoluciones::setIDProducto(int id){
     _IDProducto=id;
 }
 
-void Devoluciones::setIngresoDevolucion(char* fecha){
+void Devoluciones::setIngresoDevolucion(const char* fecha){
     strcpy(_ingresoDevolucion, fecha);
 }
 
@@ -30,7 +31,7 @@ int Devoluciones::getIDProducto(){
     return _IDProducto;
 }
 
-char Devoluciones::getIngresoDevolucion(){
+const char* Devoluciones::getIngresoDevolucion(){
     return _ingresoDevolucion;
 }
 
