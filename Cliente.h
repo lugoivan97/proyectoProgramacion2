@@ -4,9 +4,15 @@
 class Cliente:public Persona{
 public:
     Cliente();
-    void setDomicilio(char* domicilio);
-    void setTelefono(char* telefono);
-    void setMail(char* mail);
+    Cliente (const char* domicilio = "Florida",
+            const char* telefono = "123456789",
+            const char* mail = "sistema@gestion.com",
+            const char* apellidos = "apellidos",
+            const char* nombres = "nombres",
+            const char* fecha = "01/01/2024");
+    void setDomicilio(const char* domicilio);
+    void setTelefono(const char* telefono);
+    void setMail(const char* mail);
     const char* getDomicilio();
     const char* getTelefono();
     const char* getMail();

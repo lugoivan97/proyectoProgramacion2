@@ -5,15 +5,21 @@ using namespace std;
 
 Categoria::Categoria(){
     _ID=0;
-    std::string _nombre="nombre";
+    _nombre="nombre";
+}
+
+Categoria::Categoria(int id, const char* nombreCategoria){
+    _ID=id;
+    strcpy(_nombreCategoria, nombreCategoria);
+
 }
 
 void Categoria::setID(int id){
     _ID=id;
 }
 
-void Categoria::setNombre(char* nombre){
-    strcpy(_nombre, nombre);
+void Categoria::setNombreCategoria(const char* nombreCategoria){
+    strcpy(_nombreCategoria, nombreCategoria);
 }
 
 int Categoria::getID(){
@@ -25,10 +31,15 @@ char Categoria::getNombre(){
 }
 
 void Categoria::cargar(){
-
+    cout<< "ID DE LA CATEGORIA: ";
+    cin>>_ID;
+    cout<< "NOMBRE DE LA CATEGORIA: ";
+    cin>>_nombreCategoria;
 };
 
 void Categoria::mostrar(){
+    cout<< "ID DE LA CATEGORIA "<<getID()<<endl;
+    cout<< "NOMBRE DE LA CATEGORIA "<<getNombreCategoria()<<endl;
 
 };
 

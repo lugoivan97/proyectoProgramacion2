@@ -3,10 +3,11 @@
 class Persona{
 public:
     Persona();
+    Persona(const char* apellidos, const char* nombres, const char* fecha);
     void setId(int valor);
-    void setApellidos(char* apellidos);
-    void setNombres(char* nombres);
-    void setNacimiento(char* fecha);
+    void setApellidos(const char* apellidos);
+    void setNombres(const char* nombres);
+    void setNacimiento(const char* fecha);
     void setEstado(bool estado);
     int getId();
     const char* getApellidos();

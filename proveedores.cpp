@@ -1,9 +1,10 @@
 #include <iostream>
 #include "Proveedores.h"
+#include "persona.h"
 
 using namespace std;
 
-Proveedores::Proveedores(){
+Proveedores::Proveedores(int id, int cantidad, float precioTotal, const char* apellidos, const char* nombres, const char* fecha):Persona(apellidos, nombres, fecha){
     _Idproducto = 0;
     _Cantidad = 0;
     _PrecioTotal = 0;
@@ -27,9 +28,23 @@ float Proveedores::getPreciototal(){
     return _PrecioTotal;
 }
 
-void Proveedores::cargar(){}
+void Proveedores::cargar(){
+    Persona::cargar();
+    cout<< "INGRESAR EL ID DEL PRODUCTO: ";
+    cin>>_Idproducto;
+    cout<< "INGRESAR LA CANTIDAD: ";
+    cin>>_Cantidad;
+    cout<< "INGRESAR EL PRECIO TOTAL: ";
+    cin>>_PrecioTotal;
+}
 
-void Proveedores::mostrar(){}
+void Proveedores::mostrar(){
+    Persona::mostrar();
+    cout<< "ID DEL PRODUCTO: "<<getIdproducto()<<endl;
+    cout<< "CANTIDAD VENDIDA: "<<getCantidad()<<endl;
+    cout<< "PRECIO TOTAL: "<<getPreciototal()<<endl;
+
+}
 
 bool Proveedores::escribirDisco(int pos){}
 

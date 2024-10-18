@@ -1,5 +1,5 @@
 #include "detalleVenta.h"
-
+#include <iostream>
 using namespace std;
 
 
@@ -42,10 +42,24 @@ float detalleVenta::getPrecio(){
     return _precio;
 }
 
-void detalleVenta::mostrar(){
+void detalleVenta::cargar(){
+    cout<< "--------------"<< "DETALLE DE VENTA"<< "--------------"<<endl;
+    cout<< "ID de VENTA: ";
+    cin>>_IDVenta;
+    cout<< "ID de PRODUCTO: ";
+    cin>>_IDProducto;
+    cout<< "CANTIDAD: ";
+    cin>>_cantidad;
+    cout<< "PRECIO: ";
+    cin>>_precio;
 }
 
-void detalleVenta::cargar(){
+void detalleVenta::mostrar(){
+    cout<< "--------------"<< "DETALLE DE VENTA"<< "--------------"<<endl;
+    cout<< "ID DE VENTA: "<<getIDVenta()<<endl;
+    cout<< "ID DE PRODUCTO: "<<getIDProducto()<<endl;
+    cout<< "CANTIDAD: "<<getCantidad()<<endl;
+    cout<< "PRECIO: "<<getPrecio()<<endl;
 }
 
 bool detalleVenta::escribirDisco(int pos){

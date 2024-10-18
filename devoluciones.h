@@ -3,8 +3,9 @@
 class Devoluciones{
     public:
         Devoluciones();
+        Devoluciones(int id, const char* ingresoDevolucion, int idCliente, bool posDevolucion);
         void setIDProducto(int id);
-        void setIngresoDevolucion(const char* fecha);
+        void setIngresoDevolucion(const char* ingresoDevolucion);
         void setIDCliente(int idCliente);
         void setPosibilidadDevolucion(bool posDevolucion);
         int getIDProducto();

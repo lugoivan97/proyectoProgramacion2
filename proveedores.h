@@ -4,6 +4,7 @@
 class Proveedores:public Persona{
 public:
     Proveedores();
+    Proveedores(int id, int cantidad, float precioTotal, const char* apellidos, const char* nombres, const char* fecha);
     void setIdproducto(int id);
     void setCantidad(int cantidad);
     void setPreciototal(float precioTotal);

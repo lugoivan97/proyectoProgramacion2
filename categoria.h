@@ -4,10 +4,11 @@
 class Categoria{
     public:
         Categoria();
+        Categoria(int id, const char* nombreCategoria);
         void setID(int id);
-        void setNombre(char* nombre);
+        void setNombreCategoria(const char* nombreCategoria);
         int getID();
-        char getNombre();
+        char getNombreCategoria();
         void cargar();
         void mostrar();
         bool escribirDisco(int pos);
@@ -15,5 +16,5 @@ class Categoria{
 
     private:
         int _ID;
-        char _nombre[50];
+        char _nombreCategoria[50];
 };

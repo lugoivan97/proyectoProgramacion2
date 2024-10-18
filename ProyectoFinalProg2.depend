@@ -1,19 +1,25 @@
 # depslib dependency file v1.0
-1728345520 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\detalleventa.cpp
+1729204483 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\detalleventa.cpp
 	"detalleVenta.h"
+	<iostream>
 
 1728345523 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\detalleventa.h
 	<string>
 
-1728605891 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.cpp
+1729206005 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.cpp
 	"devoluciones.h"
 	<cstring>
 	<string>
-
-1728598231 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.h
-
-1728603092 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\main.cpp
 	<iostream>
+
+1729205963 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.h
+
+1729212334 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\main.cpp
+	<iostream>
+	<cstring>
+	"cliente.h"
+	"vendedor.h"
+	"categoria.h"
 
 1728605651 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\productos.cpp
 	"productos.h"
@@ -23,12 +29,12 @@
 1728600794 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\productos.h
 	<string>
 
-1728615757 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\persona.cpp
+1729044196 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\persona.cpp
 	"persona.h"
 	<cstring>
 	<iostream>
 
-1728615142 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\persona.h
+1728953386 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\persona.h
 
 1728615767 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\venta.cpp
 	"venta.h"
@@ -38,18 +44,38 @@
 1728605228 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\venta.h
 	<string>
 
-1728615798 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\cliente.cpp
+1729203519 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\cliente.cpp
 	<iostream>
 	<cstring>
 	"Cliente.h"
-
-1728615644 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\cliente.h
 	"persona.h"
 
-1728615807 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\proveedores.cpp
+1729203749 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\cliente.h
+	"persona.h"
+
+1729203471 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\proveedores.cpp
 	<iostream>
 	"Proveedores.h"
-
-1728606415 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\proveedores.h
 	"persona.h"
+
+1728953515 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\proveedores.h
+	"persona.h"
+
+1729201466 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\vendedor.h
+	"persona.h"
+
+1728947779 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\fecha.cpp
+	"Fecha.h"
+
+1728947779 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\fecha.h
+	<string>
+
+1729203395 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\vendedor.cpp
+	<iostream>
+	<cstring>
+	"Vendedor.h"
+	"persona.h"
+
+1729212181 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\categoria.h
+	<string>
 
