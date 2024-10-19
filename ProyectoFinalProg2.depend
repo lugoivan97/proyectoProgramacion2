@@ -79,3 +79,84 @@
 1729212181 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\categoria.h
 	<string>
 
+1729291610 source:c:\users\administrator\documents\proyectoprogramacion2\cliente.cpp
+	<iostream>
+	<cstring>
+	"Cliente.h"
+	"persona.h"
+
+1729291610 c:\users\administrator\documents\proyectoprogramacion2\cliente.h
+	"persona.h"
+
+1729291610 c:\users\administrator\documents\proyectoprogramacion2\persona.h
+
+1729291610 source:c:\users\administrator\documents\proyectoprogramacion2\detalleventa.cpp
+	"detalleVenta.h"
+	<iostream>
+
+1729291610 c:\users\administrator\documents\proyectoprogramacion2\detalleventa.h
+	<string>
+
+1729291610 source:c:\users\administrator\documents\proyectoprogramacion2\devoluciones.cpp
+	"devoluciones.h"
+	<cstring>
+	<string>
+	<iostream>
+
+1729291610 c:\users\administrator\documents\proyectoprogramacion2\devoluciones.h
+
+1729291610 source:c:\users\administrator\documents\proyectoprogramacion2\fecha.cpp
+	"Fecha.h"
+
+1729291610 c:\users\administrator\documents\proyectoprogramacion2\fecha.h
+	<string>
+
+1729294681 source:c:\users\administrator\documents\proyectoprogramacion2\main.cpp
+	<iostream>
+	<cstring>
+	"cliente.h"
+	"vendedor.h"
+	"categoria.h"
+
+1729291610 c:\users\administrator\documents\proyectoprogramacion2\vendedor.h
+	"persona.h"
+
+1729294820 c:\users\administrator\documents\proyectoprogramacion2\categoria.h
+	<string>
+
+1729291610 source:c:\users\administrator\documents\proyectoprogramacion2\persona.cpp
+	"persona.h"
+	<cstring>
+	<iostream>
+
+1729295045 source:c:\users\administrator\documents\proyectoprogramacion2\productos.cpp
+	"productos.h"
+	<cstring>
+	<iostream>
+
+1729294557 c:\users\administrator\documents\proyectoprogramacion2\productos.h
+	<string>
+	"categoria.h"
+
+1729295733 source:c:\users\administrator\documents\proyectoprogramacion2\proveedores.cpp
+	<iostream>
+	"Proveedores.h"
+	"persona.h"
+
+1729295368 c:\users\administrator\documents\proyectoprogramacion2\proveedores.h
+	"persona.h"
+	"categoria.h"
+
+1729291610 source:c:\users\administrator\documents\proyectoprogramacion2\venta.cpp
+	"venta.h"
+	<cstring>
+	<iostream>
+
+1729291610 c:\users\administrator\documents\proyectoprogramacion2\venta.h
+	<string>
+
+1729294861 source:c:\users\administrator\documents\proyectoprogramacion2\categoria.cpp
+	"categoria.h"
+	<cstring>
+	<iostream>
+

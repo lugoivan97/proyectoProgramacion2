@@ -22,9 +22,9 @@ void Producto::setNombre(char* nombre){
     strcpy(_nombre, nombre);
 }
 
-void Producto::setIDCategoria(char* categoria){
+/*void Producto::setIDCategoria(char* categoria){
     strcpy(_IDCategoria, categoria);
-}
+}*/
 
 void Producto::setPrecio(float precio){
         _precio=precio;
@@ -50,9 +50,9 @@ const char* Producto::getNombre(){
     return _nombre;
 }
 
-const char* Producto::getCategoria(){
+/*const char* Producto::getCategoria(){
     return _IDCategoria;
-}
+}*/
 
 float Producto::getPrecio(){
     return _precio;
