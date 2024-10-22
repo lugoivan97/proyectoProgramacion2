@@ -8,7 +8,7 @@ class Categoria{
         void setID(int id);
         void setNombreCategoria(const char* nombreCategoria);
         int getID();
-        char getNombreCategoria();
+        const char* getNombreCategoria();
         void cargar();
         void mostrar();
         bool escribirDisco(int pos);

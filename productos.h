@@ -1,19 +1,21 @@
 #pragma once
 #include <string>
+#include "categoria.h"
 
 class Producto{
     public:
         Producto();
+        Categoria categoria();
         void setIDProducto(int id);
         void setNombre(char* nombre);
-        void setIDCategoria(char* categoria);
+        //void setIDCategoria(char* categoria);
         void setPrecio(float valor);
         void setIngreso(char* fecha);
         void setStock(int valor);
         void setDescripcion(char* descripcion);
         int getIDProducto();
         const char* getNombre();
-        const char* getCategoria();
+        //const char* getCategoria();
         float getPrecio();
         const char* getIngreso();
         int getStock();
