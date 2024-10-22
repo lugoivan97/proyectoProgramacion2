@@ -55,12 +55,8 @@
 		<Unit filename="proveedores.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="vendedor.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="vendedor.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="vendedor.cpp" />
+		<Unit filename="vendedor.h" />
 		<Unit filename="venta.cpp" />
 		<Unit filename="venta.h" />
 		<Extensions>

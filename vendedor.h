@@ -4,7 +4,7 @@
 class Vendedor:public Persona{
 public:
     Vendedor();
-    Vendedor(const char* apellidos, const char* nombres, const char* nacimiento,float comision, const char* ingreso);
+    Vendedor(float comision, const char* ingreso);
     void setComisiones(float comision);
     void setIngreso(const char* ingreso);
     float getComisiones();

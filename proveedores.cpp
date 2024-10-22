@@ -5,44 +5,29 @@
 using namespace std;
 
 Proveedores::Proveedores(int id, int cantidad, float precioTotal, const char* apellidos, const char* nombres, const char* fecha):Persona(apellidos, nombres, fecha){
-    _Idproducto = 0;
-    _Cantidad = 0;
-    _PrecioTotal = 0;
+   _Idproveedor = 0;
 }
-void Proveedores::setIdproducto(int id){
-    _Idproducto = id;
+
+void Proveedores::setIdproveedor(int id){
+    _Idproveedor = id;
 }
-void Proveedores::setCantidad(int cantidad){
-    _Cantidad = cantidad;
-}
-void Proveedores::setPreciototal(float precioTotal){
-    _PrecioTotal = precioTotal;
-}
-int Proveedores::getIdproducto(){
-    return _Idproducto;
-}
-int Proveedores::getCantidad(){
-    return _Cantidad;
-}
-float Proveedores::getPreciototal(){
-    return _PrecioTotal;
+
+int Proveedores::getIdproveedor(){
+    return _Idproveedor;
 }
 
 void Proveedores::cargar(){
     Persona::cargar();
-    cout<< "INGRESAR EL ID DEL PRODUCTO: ";
-    cin>>_Idproducto;
-    cout<< "INGRESAR LA CANTIDAD: ";
-    cin>>_Cantidad;
-    cout<< "INGRESAR EL PRECIO TOTAL: ";
-    cin>>_PrecioTotal;
+    cout<< "INGRESAR EL ID DEL PROVEEDOR: ";
+    cin>>_Idproveedor;
+    cout<< "INGRESAR LA CATEGORIA: ";
+    //cin>> Categoria.setID();
 }
 
 void Proveedores::mostrar(){
     Persona::mostrar();
-    cout<< "ID DEL PRODUCTO: "<<getIdproducto()<<endl;
-    cout<< "CANTIDAD VENDIDA: "<<getCantidad()<<endl;
-    cout<< "PRECIO TOTAL: "<<getPreciototal()<<endl;
+    cout<< "INGRESAR EL ID DEL PROVEEDOR: "<<getIdproveedor()<<endl;
+    //cout<< "CATEGORIA: "<<categoria.getNombreCategoria()<<endl;
 
 }
 

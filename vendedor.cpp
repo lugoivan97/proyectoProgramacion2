@@ -5,13 +5,14 @@
 
 using namespace std;
 
-Vendedor::Vendedor():Persona("Apellido", "Nombre", "01/01/2024"), _Comisiones(0.0) {
-        strcpy(_Ingreso, "01/01/2024");
+Vendedor::Vendedor(float comision, const char* ingreso)
+        :Persona(_Apellidos, _Nombres, _Nacimiento){
+        _Comisiones=comision;
+        strcpy(_Ingreso, ingreso);
 }
 
-Vendedor::Vendedor(const char* apellidos, const char* nombres, const char* nacimiento,float comision, const char* ingreso)
-        :Persona(apellidos, nombres, nacimiento), _Comisiones(comision){
-        strcpy(_Ingreso, ingreso);
+Vendedor::Vendedor():Persona("Apellido", "Nombre", "01/01/2024"), _Comisiones(0.0) {
+        strcpy(_Ingreso, "01/01/2024");
 }
 
 void Vendedor::setComisiones(float comisiones){
