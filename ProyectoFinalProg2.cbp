@@ -52,9 +52,7 @@
 		<Unit filename="productos.cpp" />
 		<Unit filename="productos.h" />
 		<Unit filename="proveedores.cpp" />
-		<Unit filename="proveedores.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="proveedores.h" />
 		<Unit filename="vendedor.cpp" />
 		<Unit filename="vendedor.h" />
 		<Unit filename="venta.cpp" />

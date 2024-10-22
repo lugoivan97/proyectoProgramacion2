@@ -6,12 +6,12 @@
 using namespace std;
 
 Vendedor::Vendedor(float comision, const char* ingreso)
-        :Persona(_Apellidos, _Nombres, _Nacimiento){
+        :Persona(_Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail){
         _Comisiones=comision;
         strcpy(_Ingreso, ingreso);
 }
 
-Vendedor::Vendedor():Persona("Apellido", "Nombre", "01/01/2024"), _Comisiones(0.0) {
+Vendedor::Vendedor():Persona("Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com"), _Comisiones(0.0) {
         strcpy(_Ingreso, "01/01/2024");
 }
 

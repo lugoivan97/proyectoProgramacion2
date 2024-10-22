@@ -5,7 +5,7 @@
 class Proveedores:public Persona{
 public:
     Proveedores();
-    Proveedores(int id, int cantidad, float precioTotal, const char* apellidos, const char* nombres, const char* fecha);
+    Proveedores(int Idproveedor);
     Categoria categoria();
     void setIdproveedor(int id);
     int getIdproveedor();

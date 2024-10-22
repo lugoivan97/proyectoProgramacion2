@@ -4,36 +4,21 @@
 #include "persona.h"
 using namespace std;
 
-Cliente::Cliente(const char* domicilio, const char* telefono, const char* mail,
-                const char* apellidos, const char* nombres, const char* fecha)
-    :Persona(apellidos, nombres, fecha) {
+Cliente::Cliente(const char* domicilio)
+    :Persona(_Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail) {
     strcpy(_Domicilio, domicilio);
-    strcpy(_Telefono, telefono);
-    strcpy(_Mail, mail);
+}
+
+Cliente::Cliente():Persona("Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com.ar") {
+    strcpy(_Domicilio, "Florida");
 }
 
 void Cliente::setDomicilio(const char* domicilio){
     strcpy(_Domicilio, domicilio);
 }
 
-void Cliente::setTelefono(const char* telefono){
-    strcpy(_Telefono, telefono);
-}
-
-void Cliente::setMail(const char* mail){
-    strcpy(_Mail, mail);
-}
-
 const char* Cliente::getDomicilio(){
     return _Domicilio;
-}
-
-const char* Cliente::getTelefono(){
-    return _Telefono;
-}
-
-const char* Cliente::getMail(){
-    return _Mail;
 }
 
 
@@ -43,18 +28,12 @@ void Cliente::cargar(){
     Persona::cargar();
     cout<< "DOMICILIO: ";
     cin>>_Domicilio;
-    cout<< "TELEFONO: ";
-    cin>>_Telefono;
-    cout<< "MAIL: ";
-    cin>>_Mail;
 }
 
 void Cliente::mostrar(){
     cout<< "------------ "<<"DATOS DEL CLIENTE"<< " --------------"<<endl;
     Persona::mostrar();
     cout<<"DOMICILIO: "<<getDomicilio()<<endl;
-    cout<< "TELEFONO: "<<getDomicilio()<<endl;
-    cout<< "MAIL: "<<getMail()<<endl;
 }
 
 bool Cliente::escribirDisco(int pos){}
