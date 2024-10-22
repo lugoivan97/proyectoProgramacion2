@@ -1,12 +1,11 @@
 #include "categoria.h"
 #include <cstring>
-#include <iostream>
 
 using namespace std;
 
 Categoria::Categoria(){
     _ID=0;
-    strcpy(_nombreCategoria, "nombre");
+    _nombre="nombre";
 }
 
 Categoria::Categoria(int id, const char* nombreCategoria){
@@ -27,8 +26,8 @@ int Categoria::getID(){
    return _ID;
 }
 
-const char* Categoria::getNombreCategoria(){
-    return _nombreCategoria;
+char Categoria::getNombre(){
+    return _nombre;
 }
 
 void Categoria::cargar(){
