@@ -19,7 +19,7 @@ int main()
     cout<< "EL NOMBRE ES: "<<cliente.getNombres()<<endl;
 
     Proveedores proveedor;
-    proveedor.setNombres("CRISTIAN");
+    proveedor.setNombres("Marta");
     cout<< "EL NOMBRE ES: "<<proveedor.getNombres()<<endl;
 
     return 0;

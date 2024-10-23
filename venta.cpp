@@ -5,7 +5,7 @@
 using namespace std;
 
 Venta::Venta(){
-    _ID=0;
+    _IDVenta=0;
     std::string _fecha= "10/10/2024";
     _idCliente=0;
     _idVendedor=0;
@@ -13,12 +13,8 @@ Venta::Venta(){
     _envio=0;
 }
 
-void Venta::setID(int id){
-    _ID=id;
-}
-
-void Venta::setFecha(char* fecha){
-    strcpy(_fecha, fecha);
+void Venta::setIDVenta(int id){
+    _IDVenta=id;
 }
 
 void Venta::setIDCliente(int idCliente){
@@ -37,12 +33,20 @@ void Venta::setEnvio(bool envio){
     _envio=envio;
 }
 
-int Venta::getID(){
-    return _ID;
+void Venta::setIDProducto(int idProducto){
+    _IDProducto=idProducto;
 }
 
-const char* Venta::getFecha(){
-    return _fecha;
+void Venta::setCantidad(int cantidad){
+    _cantidad=cantidad;
+}
+
+void Venta::setPrecioUnitario(float precio){
+    _precioUnitario=precio;
+}
+
+int Venta::getIDVenta(){
+    return _IDVenta;
 }
 
 int Venta::getIDCliente(){
@@ -61,27 +65,53 @@ bool Venta::getEnvio(){
     return _envio;
 }
 
+int Venta::getIDProducto(){
+    return _IDProducto;
+}
+
+int Venta::getCantidad(){
+    return _cantidad;
+}
+
+float Venta::getPrecioUnitario(){
+    return _precioUnitario;
+}
+
+void Venta::CalcularTotal(){
+    float precioTotal = _cantidad*_precioUnitario;
+}
+
 void Venta::cargar(){
     cout<< "INGRESAR EL ID: ";
-    cin>>_ID;
+    cin>>_IDVenta;
     cout<< "INGRESAR LA FECHA: ";
-    cin>>_fecha;
-    cout<< "INGRESAR EL ID DEL CLIENTE: ";
-    cin>>_idCliente;
-    cout<< "INGRESAR EL ID DEL VENDEDOR: ";
-    cin>>_idVendedor;
-    cout<< "INGRESAR FORMA DE PAGO: ";
+    //cin>>_fecha;
+     cout<< "ID de PRODUCTO: ";
+    cin>>_IDProducto;
+    cout<< "INGRESE LA CANTIDAD: ";
+    cin>>_cantidad;
+    cout<< "INGRESE EL PRECIO UNITARIO: ";
+    cin>>_precioUnitario;
+     cout<< "INGRESE LA FORMA DE PAGO: ";
     cin>>_formaDePago;
-    cout<< "INGRESAR SI TIENE ENVIO O NO: ";
+    cout<< "INGRESE SI TIENE ENVIO O NO: ";
     cin>>_envio;
+    cout << "--------------------------------" << endl;
+    cout<< "INGRESE EL ID DEL CLIENTE: ";
+    cin>>_idCliente;
+    cout<< "INGRESE EL ID DEL VENDEDOR: ";
+    cin>>_idVendedor;
 }
 
 void Venta::mostrar(){
-    cout<< "EL ID ES: "<<_ID<<endl;
-    cout<< "LA FECHA ES: "<<_fecha<<endl;
-    cout<< "EL ID DEL CLIENTE ES: "<<_idCliente<<endl;
-    cout<< "EL ID DEL VENDEDOR ES. "<<_idVendedor<<endl;
-    cout<< "LA FORMA DE PAGO ES: "<<_formaDePago<<endl;
+    //cout<< "FECHA: "<<_fecha<<endl;
+    cout<< "ID DE VENTA: "<< getIDVenta() <<endl;
+    cout<< "ID DE PRODUCTO: "<<getIDProducto()<<endl;
+    cout<< "CANTIDAD: "<<getCantidad()<<endl;
+    cout<< "PRECIO UNITARIO: "<<getPrecioUnitario()<<endl;
+    cout<< "ID DEL CLIENTE: "<<_idCliente<<endl;
+    cout<< "ID DEL VENDEDOR: "<<_idVendedor<<endl;
+    cout<< "FORMA DE PAGO: "<<_formaDePago<<endl;
     cout<< "TIENE ENVIO O NO: "<<_envio<<endl;
 }
 
