@@ -5,7 +5,7 @@ using namespace std;
 
 Categoria::Categoria(){
     _ID=0;
-    _nombre="nombre";
+    strcpy(_nombre, "nombre");
 }
 
 Categoria::Categoria(int id, const char* nombreCategoria){

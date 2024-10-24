@@ -3,24 +3,18 @@
 #include "cliente.h"
 #include "vendedor.h"
 #include "categoria.h"
-#include "persona.h"
 #include "proveedores.h"
+#include "persona.h"
+#include "venta.h"
+#include "FECHA.h"
 
 using namespace std;
 
 int main()
 {
-    Vendedor vendedor;
-    vendedor.setNombres("LUCIA");
-    cout<< "EL NOMBRE ES: "<<vendedor.getNombres()<<endl;
-
-    Cliente cliente;
-    cliente.setNombres("IVAN");
-    cout<< "EL NOMBRE ES: "<<cliente.getNombres()<<endl;
-
-    Proveedores proveedor;
-    proveedor.setNombres("CRISTIAN");
-    cout<< "EL NOMBRE ES: "<<proveedor.getNombres()<<endl;
+    Venta venta;
+    venta.fecha.setDia(1);
+    cout<< "EL DIA ES: "<<venta.fecha.getDia()<<endl;
 
     return 0;
 }

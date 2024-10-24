@@ -5,11 +5,11 @@
 using namespace std;
 
 
-Proveedores::Proveedores(int id):Persona(_Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail){
+Proveedores::Proveedores(int id):Persona(_Id, _Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail){
    _Idproveedor = id;
 }
 
-Proveedores::Proveedores():Persona("Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com"), _Idproveedor(1) {
+Proveedores::Proveedores():Persona(1, "Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com"), _Idproveedor(1) {
 }
 
 void Proveedores::setIdproveedor(int id){

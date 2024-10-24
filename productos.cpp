@@ -5,12 +5,12 @@ using namespace std;
 
 Producto::Producto(){
         _IDProducto=0;
-        std::string _nombre="nombre";
-        std::string _IDCategoria= "categoria";
+        strcpy(_nombre, "nombre");
+        strcpy(_IDCategoria, "categoria");
         _precio=0.0f;
-        std::string _ingreso= "fecha";
+        strcpy(_ingreso, "fecha");
         _stock=0;
-        std::string _descripcion="descripcion";
+        strcpy( _descripcion, "descripcion");
 
 }
 

@@ -3,7 +3,7 @@
 class Persona{
 public:
     Persona();
-    Persona(const char* apellidos, const char* nombres, const char* fecha, const char* telefono,const char* mail);
+    Persona(int valor, const char* apellidos, const char* nombres, const char* fecha, const char* telefono,const char* mail);
     void setId(int valor);
     void setApellidos(const char* apellidos);
     void setNombres(const char* nombres);
@@ -18,6 +18,7 @@ public:
     bool getEstado();
     const char* getTelefono();
     const char* getMail();
+    bool ValidacionTelefono(const char* telefono);
     void cargar();
     void mostrar();
     bool escribirDisco(int pos);

@@ -5,11 +5,11 @@
 using namespace std;
 
 Cliente::Cliente(const char* domicilio)
-    :Persona(_Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail) {
+    :Persona(_Id,_Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail) {
     strcpy(_Domicilio, domicilio);
 }
 
-Cliente::Cliente():Persona("Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com.ar") {
+Cliente::Cliente():Persona(1, "Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com.ar") {
     strcpy(_Domicilio, "Florida");
 }
 

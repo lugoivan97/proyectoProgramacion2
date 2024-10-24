@@ -6,12 +6,12 @@
 using namespace std;
 
 Vendedor::Vendedor(float comision, const char* ingreso)
-        :Persona(_Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail){
+        :Persona(_Id, _Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail){
         _Comisiones=comision;
         strcpy(_Ingreso, ingreso);
 }
 
-Vendedor::Vendedor():Persona("Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com"), _Comisiones(0.0) {
+Vendedor::Vendedor():Persona(1, "Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com"), _Comisiones(0.0) {
         strcpy(_Ingreso, "01/01/2024");
 }
 
@@ -34,8 +34,10 @@ const char* Vendedor::getIngreso(){
 void Vendedor::cargar(){
     cout<< "------------ "<<"DATOS DEL VENDEDOR"<< " --------------"<<endl;
     Persona::cargar();
-    cout<< "MONTO DE COMISION: "<<_Comisiones<<endl;
-    cout<< "FECHA DE INGRESO: "<<_Ingreso<<endl;
+    cout<< "MONTO DE COMISION: ";
+    cin>>_Comisiones;
+    cout<< "FECHA DE INGRESO: ";
+    cin>>_Ingreso;
 }
 
 void Vendedor::mostrar(){

@@ -3,7 +3,17 @@
 #include <iostream>
 using namespace std;
 
-Persona::Persona(const char* apellidos="apellidos", const char* nombres="nombres", const char* fecha="01/01/2024", const char* telefono="123456789", const char* mail="sistema@gestion.com"){
+Persona::Persona(){
+    _Id=0;
+    strcpy(_Apellidos, "Apellidos");
+    strcpy(_Nombres, "Nombres");
+    strcpy(_Nacimiento, "01/01/2024");
+    strcpy (_Telefono, "123456789");
+    strcpy(_Mail, "sistema@gestion.com.ar");
+}
+
+Persona::Persona(int id, const char* apellidos, const char* nombres, const char* fecha, const char* telefono, const char* mail){
+    _Id=id;
     strcpy(_Apellidos, apellidos);
     strcpy(_Nombres, nombres);
     strcpy(_Nacimiento, fecha);
@@ -32,7 +42,14 @@ void Persona::setEstado(bool estado){
 }
 
 void Persona::setTelefono(const char* telefono){
-    strcpy(_Telefono, telefono);
+    if(ValidacionTelefono(telefono)){
+        strcpy(_Telefono, telefono);
+    }
+    while (ValidacionTelefono(telefono)==false){
+        cout<< "TELEFONO INVALIDO"<<endl;
+        cout<< "INGRESAR NUEVAMENTE EL TELEFONO: ";
+        cin>>_Telefono;
+    }
 }
 
 void Persona::setMail(const char* mail){
@@ -67,15 +84,28 @@ const char* Persona::getMail(){
     return _Mail;
 }
 
+bool Persona::ValidacionTelefono(const char* telefono){
+    int numeros=strlen(telefono);
+    if(numeros<8 || numeros>10){
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
 void Persona::cargar(){
     cout<< "EL NOMBRE ES: ";
     cin>>_Nombres;
+    cin.getline(_Nombres, sizeof(_Nombres));
     cout<< "EL APELLIDO ES: ";
     cin>>_Apellidos;
     cout<< "EL NACIMIENTO ES: ";
     cin>>_Nacimiento;
     cout<< "EL TELEFONO ES: ";
     cin>>_Telefono;
+    cin.getline(_Telefono, sizeof(_Telefono));
+    setTelefono(_Telefono);
     cout<< "EL MAIL ES: ";
     cin>>_Mail;
 }
