@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include <string>
 
 class detalleVenta{
@@ -23,4 +23,4 @@ class detalleVenta{
         int _cantidad;
         float _precio;
 
-};
+};*/

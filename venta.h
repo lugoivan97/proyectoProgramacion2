@@ -5,7 +5,11 @@
 class Venta{
     public:
         Venta();
+<<<<<<< HEAD
         Fecha fecha;
+=======
+        Fecha fecha();
+>>>>>>> f5e728df51ac3003e4e31a0f77635e89d8f38240
         void setIDVenta(int id);
         void setIDCliente(int idCliente);
         void setIDVendedor(int idVendedor);

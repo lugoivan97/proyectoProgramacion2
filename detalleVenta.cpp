@@ -1,4 +1,4 @@
-#include "detalleVenta.h"
+/*#include "detalleVenta.h"
 #include <iostream>
 using namespace std;
 
@@ -67,3 +67,4 @@ bool detalleVenta::escribirDisco(int pos){
 
 bool detalleVenta::leerDisco(int pos){
 }
+*/
