@@ -5,11 +5,6 @@
 class Venta{
     public:
         Venta();
-<<<<<<< HEAD
-        Fecha fecha;
-=======
-        Fecha fecha();
->>>>>>> f5e728df51ac3003e4e31a0f77635e89d8f38240
         void setIDVenta(int id);
         void setIDCliente(int idCliente);
         void setIDVendedor(int idVendedor);
@@ -18,6 +13,7 @@ class Venta{
         void setIDProducto(int idProducto);
         void setCantidad(int cantidad);
         void setPrecioUnitario(float precio);
+        void setFecha(Fecha fecha);
 
         int getIDVenta();
         const char* getFecha();
@@ -41,6 +37,8 @@ class Venta{
         int _idVendedor;
         char _formaDePago[50];
         bool _envio;
+        Fecha fecha;
+
         int _IDProducto;
         int _cantidad;
         float _precioUnitario;

@@ -8,14 +8,14 @@ public:
     Proveedores(int Idproveedor);
     Categoria categoria();
     void setIdproveedor(int id);
-    void setNombre(char* nombre);
+    void setMarca(char* marca);
     int getIdproveedor();
-    const char* getNombre();
+    const char* getMarca();
     void cargar();
     void mostrar();
     bool escribirDisco(int pos);
     bool leerDisco(int pos);
 private:
     int _Idproveedor;
-    char _Nombre;
+    char _Marca;
 };

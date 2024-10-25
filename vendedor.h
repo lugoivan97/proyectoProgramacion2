@@ -1,19 +1,22 @@
 #pragma once
 #include "persona.h"
+#include "FECHA.h"
 
 class Vendedor:public Persona{
 public:
     Vendedor();
-    Vendedor(float comision, const char* ingreso);
+    Vendedor(float comision, float comisionPagada, Fecha fecha);
     void setComisiones(float comision);
-    void setIngreso(const char* ingreso);
+    void setComisionPagada(float comisionPagada);
     float getComisiones();
-    const char* getIngreso();
+    std::string getFecha();
+    float getComisionPagada();
     void cargar();
     void mostrar();
     bool escribirDisco(int pos);
     bool leerDisco(int pos);
 private:
     float _Comisiones;
-    char _Ingreso[11];
+    float _ComisionPagada;
+    Fecha _fecha;
 };

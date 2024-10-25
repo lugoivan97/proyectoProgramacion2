@@ -5,30 +5,30 @@
 
 using namespace std;
 
-Vendedor::Vendedor(float comision, const char* ingreso)
-        :Persona(_Id, _Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail){
+Vendedor::Vendedor(float comision, float comisionPagada, Fecha fecha)
+        :Persona(){
         _Comisiones=comision;
-        strcpy(_Ingreso, ingreso);
+        _ComisionPagada=comisionPagada;
+        _fecha=fecha;
 }
 
-Vendedor::Vendedor():Persona(1, "Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com"), _Comisiones(0.0) {
-        strcpy(_Ingreso, "01/01/2024");
+Vendedor::Vendedor():Persona(1, "Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com"), _Comisiones(0.0), _ComisionPagada(0.0) {
 }
 
 void Vendedor::setComisiones(float comisiones){
     _Comisiones = comisiones;
 }
 
-void Vendedor::setIngreso(const char* ingreso){
-    strcpy(_Ingreso, ingreso);
+void Vendedor::setComisionPagada(float comisionPagada){
+    _ComisionPagada=comisionPagada;
 }
 
 float Vendedor::getComisiones(){
     return _Comisiones;
 }
 
-const char* Vendedor::getIngreso(){
-    return _Ingreso;
+std::string Vendedor::getFecha(){
+    return _fecha.toString();
 }
 
 void Vendedor::cargar(){
@@ -36,15 +36,13 @@ void Vendedor::cargar(){
     Persona::cargar();
     cout<< "MONTO DE COMISION: ";
     cin>>_Comisiones;
-    cout<< "FECHA DE INGRESO: ";
-    cin>>_Ingreso;
 }
 
 void Vendedor::mostrar(){
     cout<< "------------ "<<"DATOS DEL VENDEDOR"<< " --------------"<<endl;
     Persona::mostrar();
     cout << "Monto de comision: " <<getComisiones() << endl;
-    cout << "Fecha de ingreso: " <<getIngreso() << endl;
+    cout << "Fecha de ingreso: " <<getFecha() << endl;
 }
 
 bool Vendedor::escribirDisco(int pos){}

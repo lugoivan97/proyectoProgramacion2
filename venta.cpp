@@ -6,10 +6,6 @@ using namespace std;
 
 Venta::Venta(){
     _IDVenta=0;
-<<<<<<< HEAD
-=======
-    std::string _fecha= "10/10/2024";
->>>>>>> f5e728df51ac3003e4e31a0f77635e89d8f38240
     _idCliente=0;
     _idVendedor=0;
     strcpy(_formaDePago, "fp"),
@@ -88,8 +84,8 @@ void Venta::cargar(){
     cout<< "INGRESAR EL ID: ";
     cin>>_IDVenta;
     cout<< "INGRESAR LA FECHA: ";
-    //cin>>_fecha;
-     cout<< "ID de PRODUCTO: ";
+    Fecha();
+    cout<< "ID de PRODUCTO: ";
     cin>>_IDProducto;
     cout<< "INGRESE LA CANTIDAD: ";
     cin>>_cantidad;
@@ -107,7 +103,7 @@ void Venta::cargar(){
 }
 
 void Venta::mostrar(){
-    //cout<< "FECHA: "<<_fecha<<endl;
+    cout<< "FECHA: "<<fecha.getAnio()<<fecha.getMes()<<fecha.getDia()<<endl;
     cout<< "ID DE VENTA: "<< getIDVenta() <<endl;
     cout<< "ID DE PRODUCTO: "<<getIDProducto()<<endl;
     cout<< "CANTIDAD: "<<getCantidad()<<endl;

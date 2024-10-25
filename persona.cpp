@@ -7,7 +7,6 @@ Persona::Persona(){
     _Id=0;
     strcpy(_Apellidos, "Apellidos");
     strcpy(_Nombres, "Nombres");
-    strcpy(_Nacimiento, "01/01/2024");
     strcpy (_Telefono, "123456789");
     strcpy(_Mail, "sistema@gestion.com.ar");
 }
@@ -16,7 +15,6 @@ Persona::Persona(int id, const char* apellidos, const char* nombres, const char*
     _Id=id;
     strcpy(_Apellidos, apellidos);
     strcpy(_Nombres, nombres);
-    strcpy(_Nacimiento, fecha);
     strcpy (_Telefono, telefono);
     strcpy(_Mail, mail);
 }

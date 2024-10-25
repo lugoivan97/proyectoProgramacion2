@@ -1,4 +1,5 @@
 #include "productos.h"
+#include "categoria.h"
 #include <cstring>
 #include <iostream>
 using namespace std;
@@ -6,7 +7,6 @@ using namespace std;
 Producto::Producto(){
         _IDProducto=0;
         strcpy(_nombre, "nombre");
-        strcpy(_IDCategoria, "categoria");
         _precio=0.0f;
         strcpy(_ingreso, "fecha");
         _stock=0;
