@@ -6,14 +6,18 @@ public:
     Cliente();
     Cliente (int idCliente, int puntos);
     void setIdCliente(int idCliente);
-    void setPuntos(int Puntos);
+    void setPuntaje(int Puntos);
+
     int getidCliente();
-    int getPuntos();
+    int getPuntaje();
+
+    void PuntajeMeta(int puntaje);
+
     void cargar();
     void mostrar();
     bool escribirDisco(int pos);
     bool leerDisco(int pos);
 private:
     int _IDCliente;
-    int _Puntos;
+    int _Puntaje;
 };
