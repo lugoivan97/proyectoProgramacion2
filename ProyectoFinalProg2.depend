@@ -180,10 +180,12 @@
 
 1729951072 c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\persona.h
 
-1729951072 source:c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\detalleventa.cpp
+1729966556 source:c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\detalleventa.cpp
+	"detalleVenta.h"
+	"Cliente.h"
 	<iostream>
 
-1729636384 c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\detalleventa.h
+1729966495 c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\detalleventa.h
 	<string>
 
 1729951072 source:c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\devoluciones.cpp
@@ -200,7 +202,7 @@
 1729951072 c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\fecha.h
 	<string>
 
-1729964520 source:c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\main.cpp
+1729964748 source:c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\main.cpp
 	<iostream>
 	<cstring>
 	"cliente.h"
@@ -254,7 +256,7 @@
 	<cstring>
 	<iostream>
 
-1729951072 c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\venta.h
+1729966368 c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\venta.h
 	<string>
 	"FECHA.h"
 

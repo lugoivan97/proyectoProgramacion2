@@ -10,9 +10,6 @@ class Venta{
         void setIDVendedor(int idVendedor);
         void setFormaDePago(char* fp);
         void setEnvio(bool envio);
-        void setIDProducto(int idProducto);
-        void setCantidad(int cantidad);
-        void setPrecioUnitario(float precio);
         void setFecha(Fecha fecha);
 
         int getIDVenta();
@@ -21,11 +18,7 @@ class Venta{
         int getIDVendedor();
         const char* getFormaDePago();
         bool getEnvio();
-        int getIDProducto();
-        int getCantidad();
-        float getPrecioUnitario();
 
-        void CalcularTotal();
         void cargar();
         void mostrar();
         bool escribirDisco(int pos);
@@ -38,8 +31,4 @@ class Venta{
         char _formaDePago[50];
         bool _envio;
         Fecha fecha;
-
-        int _IDProducto;
-        int _cantidad;
-        float _precioUnitario;
 };

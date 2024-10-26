@@ -7,20 +7,22 @@ class detalleVenta{
         void setIDVenta(int id);
         void setIDProducto(int idProducto);
         void setCantidad(int cantidad);
-        void setPrecio(float precio);
+        void setPrecioUnitario(float precio);
         int getIDVenta();
         int getIDProducto();
         int getCantidad();
-        float getPrecio();
+        float getPrecioUnitario();
         void cargar();
         void mostrar();
         bool leerDisco(int pos);
         bool escribirDisco(int pos);
+        productosXpuntaje(int IDproducto, int puntaje);
+
+        void CalcularTotal();
 
     private:
         int _IDVenta;
         int _IDProducto;
         int _cantidad;
-        float _precio;
-
+        float _precioUnitario;
 };

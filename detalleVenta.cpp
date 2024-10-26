@@ -1,4 +1,5 @@
-/*#include "detalleVenta.h"
+#include "detalleVenta.h"
+#include "Cliente.h"
 #include <iostream>
 using namespace std;
 
@@ -7,7 +8,7 @@ detalleVenta::detalleVenta(){
     _IDVenta=0;
     _IDProducto=0;
     _cantidad=0;
-    _precio=0.0f;
+    _precioUnitario=0.0f;
 }
 
 void detalleVenta::setIDVenta(int idVenta){
@@ -22,8 +23,8 @@ void detalleVenta::setCantidad(int cantidad){
     _cantidad=cantidad;
 }
 
-void detalleVenta::setPrecio(float precio){
-    _precio=precio;
+void detalleVenta::setPrecioUnitario(float precio){
+    _precioUnitario=precio;
 }
 
 int detalleVenta::getIDVenta(){
@@ -38,8 +39,12 @@ int detalleVenta::getCantidad(){
     return _cantidad;
 }
 
-float detalleVenta::getPrecio(){
-    return _precio;
+float detalleVenta::getPrecioUnitario(){
+    return _precioUnitario;
+}
+
+void detalleVenta::CalcularTotal(){
+    float precioTotal = _cantidad*_precioUnitario;
 }
 
 void detalleVenta::cargar(){
@@ -51,7 +56,7 @@ void detalleVenta::cargar(){
     cout<< "CANTIDAD: ";
     cin>>_cantidad;
     cout<< "PRECIO: ";
-    cin>>_precio;
+    cin>>_precioUnitario;
 }
 
 void detalleVenta::mostrar(){
@@ -59,7 +64,7 @@ void detalleVenta::mostrar(){
     cout<< "ID DE VENTA: "<<getIDVenta()<<endl;
     cout<< "ID DE PRODUCTO: "<<getIDProducto()<<endl;
     cout<< "CANTIDAD: "<<getCantidad()<<endl;
-    cout<< "PRECIO: "<<getPrecio()<<endl;
+    cout<< "PRECIO: "<<getPrecioUnitario()<<endl;
 }
 
 bool detalleVenta::escribirDisco(int pos){
@@ -67,4 +72,7 @@ bool detalleVenta::escribirDisco(int pos){
 
 bool detalleVenta::leerDisco(int pos){
 }
-*/
+
+/*void detalleVenta::productosXpuntaje(int producto, int puntaje){
+
+}*/
