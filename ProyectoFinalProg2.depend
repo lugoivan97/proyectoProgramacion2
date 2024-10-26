@@ -13,7 +13,7 @@
 
 1729205963 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.h
 
-1729915530 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\main.cpp
+1729915984 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\main.cpp
 	<iostream>
 	<cstring>
 	"cliente.h"
@@ -35,12 +35,12 @@
 	"categoria.h"
 	"FECHA.h"
 
-1729814436 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\persona.cpp
+1729942930 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\persona.cpp
 	"persona.h"
 	<cstring>
 	<iostream>
 
-1729726235 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\persona.h
+1729942610 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\persona.h
 
 1729740352 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\venta.cpp
 	"venta.h"
@@ -51,16 +51,16 @@
 	<string>
 	"FECHA.h"
 
-1729726311 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\cliente.cpp
+1729942930 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\cliente.cpp
 	<iostream>
 	<cstring>
 	"Cliente.h"
 	"persona.h"
 
-1729722220 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\cliente.h
+1729944209 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\cliente.h
 	"persona.h"
 
-1729726336 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\proveedores.cpp
+1729942958 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\proveedores.cpp
 	<iostream>
 	"Proveedores.h"
 	"persona.h"
@@ -79,7 +79,7 @@
 1728947779 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\fecha.h
 	<string>
 
-1729814542 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\vendedor.cpp
+1729942987 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\vendedor.cpp
 	<iostream>
 	<cstring>
 	"Vendedor.h"

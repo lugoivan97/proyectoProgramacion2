@@ -9,14 +9,16 @@ Persona::Persona(){
     strcpy(_Nombres, "Nombres");
     strcpy (_Telefono, "123456789");
     strcpy(_Mail, "sistema@gestion.com.ar");
+    strcpy(_Domicilio, "Vicente Lopez 1234");
 }
 
-Persona::Persona(int id, const char* apellidos, const char* nombres, const char* fecha, const char* telefono, const char* mail){
+Persona::Persona(int id, const char* apellidos, const char* nombres, const char* fecha, const char* telefono, const char* mail, const char* domicilio){
     _Id=id;
     strcpy(_Apellidos, apellidos);
     strcpy(_Nombres, nombres);
     strcpy (_Telefono, telefono);
     strcpy(_Mail, mail);
+    strcpy(_Domicilio, domicilio);
 }
 
 void Persona::setId(int id){
@@ -54,6 +56,10 @@ void Persona::setMail(const char* mail){
     strcpy(_Mail, mail);
 }
 
+void Persona::setDomicilio(const char* domicilio){
+    strcpy(_Domicilio, domicilio);
+}
+
 int Persona::getId(){
     return _Id;
 }
@@ -80,6 +86,10 @@ const char* Persona::getTelefono(){
 
 const char* Persona::getMail(){
     return _Mail;
+}
+
+const char* Persona::getDomicilio(){
+    return _Domicilio;
 }
 
 bool Persona::ValidacionTelefono(const char* telefono){

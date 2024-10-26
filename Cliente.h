@@ -4,13 +4,16 @@
 class Cliente:public Persona{
 public:
     Cliente();
-    Cliente (const char* domicilio);
-    void setDomicilio(const char* domicilio);
-    const char* getDomicilio();
+    Cliente (int idCliente, int puntos);
+    void setIdCliente(int idCliente);
+    void setPuntos(int Puntos);
+    int getidCliente();
+    int getPuntos();
     void cargar();
     void mostrar();
     bool escribirDisco(int pos);
     bool leerDisco(int pos);
 private:
-    char _Domicilio[100];
+    int _IDCliente;
+    int _Puntos;
 };

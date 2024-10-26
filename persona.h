@@ -3,14 +3,15 @@
 class Persona{
 public:
     Persona();
-    Persona(int valor, const char* apellidos, const char* nombres, const char* fecha, const char* telefono,const char* mail);
-    void setId(int valor);
+    Persona(int id, const char* apellidos, const char* nombres, const char* fecha, const char* telefono,const char* mail, const char* domicilio);
+    void setId(int id);
     void setApellidos(const char* apellidos);
     void setNombres(const char* nombres);
     void setNacimiento(const char* fecha);
     void setEstado(bool estado);
     void setTelefono(const char* telefono);
     void setMail(const char* mail);
+    void setDomicilio(const char* domicilio);
     int getId();
     const char* getApellidos();
     const char* getNombres();
@@ -18,6 +19,7 @@ public:
     bool getEstado();
     const char* getTelefono();
     const char* getMail();
+    const char* getDomicilio();
     bool ValidacionTelefono(const char* telefono);
     void cargar();
     void mostrar();
@@ -31,4 +33,5 @@ protected:
     bool _Estado;
     char _Telefono[15];
     char _Mail[100];
+    char _Domicilio[100];
 };
