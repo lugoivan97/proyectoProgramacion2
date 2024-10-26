@@ -36,9 +36,7 @@
 		<Unit filename="Cliente.h" />
 		<Unit filename="FECHA.cpp" />
 		<Unit filename="FECHA.h" />
-		<Unit filename="categoria.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="categoria.cpp" />
 		<Unit filename="categoria.h" />
 		<Unit filename="detalleVenta.cpp" />
 		<Unit filename="detalleVenta.h">

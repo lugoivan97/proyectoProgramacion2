@@ -13,7 +13,7 @@
 
 1729205963 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.h
 
-1729813847 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\main.cpp
+1729915530 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\main.cpp
 	<iostream>
 	<cstring>
 	"cliente.h"
@@ -23,16 +23,17 @@
 	"persona.h"
 	"venta.h"
 	"FECHA.h"
-
-1729815445 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\productos.cpp
 	"productos.h"
-	"categoria.h"
+
+1729915791 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\productos.cpp
+	"productos.h"
 	<cstring>
 	<iostream>
 
-1729815176 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\productos.h
+1729915775 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\productos.h
 	<string>
 	"categoria.h"
+	"FECHA.h"
 
 1729814436 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\persona.cpp
 	"persona.h"
@@ -251,4 +252,9 @@
 1729723223 c:\users\administrator\documents\proyectofinalprograii\proyectoprogramacion2\venta.h
 	<string>
 	"FECHA.h"
+
+1729915325 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\categoria.cpp
+	"categoria.h"
+	<cstring>
+	<iostream>
 

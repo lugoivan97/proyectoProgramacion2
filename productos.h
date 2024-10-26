@@ -1,22 +1,22 @@
 #pragma once
 #include <string>
 #include "categoria.h"
+#include "FECHA.h"
 
 class Producto{
     public:
         Producto();
+        Producto (int id, char* nombre, float precio, int stock, char* descripcion, Fecha fecha, Categoria categoria);
         void setIDProducto(int id);
         void setNombre(char* nombre);
-        //void setIDCategoria(char* categoria);
-        void setPrecio(float valor);
-        void setIngreso(char* fecha);
-        void setStock(int valor);
+        void setPrecio(float precio);
+        void setStock(int stock);
         void setDescripcion(char* descripcion);
+        std::string getFecha();
+        void getCategoria();
         int getIDProducto();
         const char* getNombre();
-        //const char* getCategoria();
         float getPrecio();
-        const char* getIngreso();
         int getStock();
         const char* getDescripcion();
         void cargar();
@@ -27,9 +27,9 @@ class Producto{
     private:
         int _IDProducto;
         char _nombre[100];
-        Categoria _categoria;
+        Categoria categoria;
         float _precio;
-        char _ingreso[15];
+        Fecha fecha;
         int _stock;
         char _descripcion[200];
 

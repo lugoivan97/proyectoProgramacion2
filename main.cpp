@@ -7,14 +7,16 @@
 #include "persona.h"
 #include "venta.h"
 #include "FECHA.h"
-
+#include "productos.h"
 using namespace std;
 
 int main()
 {
-    Fecha fecha;
+    /*Fecha fecha;
     Vendedor vendedor(6.0f, 10000.0f, fecha);
-    vendedor.mostrar();
+    vendedor.mostrar();*/
+
+
 
     return 0;
 }
