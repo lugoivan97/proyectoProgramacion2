@@ -8,8 +8,19 @@ Venta::Venta(){
     _IDVenta=0;
     _idCliente=0;
     _idVendedor=0;
-    strcpy(_formaDePago, "fp"),
+    strcpy(_formaDePago, "fp");
     _envio=0;
+    detalleVenta venta;
+}
+
+Venta::Venta(int idVenta, int idCliente, int idVendedor, char* fp, bool envio, Fecha fecha, detalleVenta venta){
+    _IDVenta=idVenta;
+    _idCliente=idCliente;
+    _idVendedor=idVendedor;
+    strcpy(_formaDePago, fp);
+    _envio=envio;
+    _fecha=fecha;
+    _venta=venta;
 }
 
 void Venta::setIDVenta(int id){
@@ -32,18 +43,6 @@ void Venta::setEnvio(bool envio){
     _envio=envio;
 }
 
-void Venta::setIDProducto(int idProducto){
-    _IDProducto=idProducto;
-}
-
-void Venta::setCantidad(int cantidad){
-    _cantidad=cantidad;
-}
-
-void Venta::setPrecioUnitario(float precio){
-    _precioUnitario=precio;
-}
-
 int Venta::getIDVenta(){
     return _IDVenta;
 }
@@ -64,34 +63,12 @@ bool Venta::getEnvio(){
     return _envio;
 }
 
-int Venta::getIDProducto(){
-    return _IDProducto;
-}
-
-int Venta::getCantidad(){
-    return _cantidad;
-}
-
-float Venta::getPrecioUnitario(){
-    return _precioUnitario;
-}
-
-void Venta::CalcularTotal(){
-    float precioTotal = _cantidad*_precioUnitario;
-}
-
 void Venta::cargar(){
     cout<< "INGRESAR EL ID: ";
     cin>>_IDVenta;
     cout<< "INGRESAR LA FECHA: ";
     Fecha();
-    cout<< "ID de PRODUCTO: ";
-    cin>>_IDProducto;
-    cout<< "INGRESE LA CANTIDAD: ";
-    cin>>_cantidad;
-    cout<< "INGRESE EL PRECIO UNITARIO: ";
-    cin>>_precioUnitario;
-     cout<< "INGRESE LA FORMA DE PAGO: ";
+    cout<< "INGRESE LA FORMA DE PAGO: ";
     cin>>_formaDePago;
     cout<< "INGRESE SI TIENE ENVIO O NO: ";
     cin>>_envio;
@@ -103,15 +80,13 @@ void Venta::cargar(){
 }
 
 void Venta::mostrar(){
-    cout<< "FECHA: "<<fecha.getAnio()<<fecha.getMes()<<fecha.getDia()<<endl;
+    cout<< "FECHA: "<<_fecha.getAnio()<<_fecha.getMes()<<_fecha.getDia()<<endl;
     cout<< "ID DE VENTA: "<< getIDVenta() <<endl;
-    cout<< "ID DE PRODUCTO: "<<getIDProducto()<<endl;
-    cout<< "CANTIDAD: "<<getCantidad()<<endl;
-    cout<< "PRECIO UNITARIO: "<<getPrecioUnitario()<<endl;
     cout<< "ID DEL CLIENTE: "<<_idCliente<<endl;
     cout<< "ID DEL VENDEDOR: "<<_idVendedor<<endl;
     cout<< "FORMA DE PAGO: "<<_formaDePago<<endl;
     cout<< "TIENE ENVIO O NO: "<<_envio<<endl;
+    cout<< "CANTIDAD TOTAL DE PUNTOS: "<< _venta.getPuntosGanados()<<endl;
 }
 
 bool Venta::escribirDisco(int pos){
@@ -119,5 +94,3 @@ bool Venta::escribirDisco(int pos){
 
 bool Venta::leerDisco(int pos){
 }
-
-

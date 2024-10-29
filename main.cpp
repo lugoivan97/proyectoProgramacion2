@@ -8,6 +8,7 @@
 #include "venta.h"
 #include "FECHA.h"
 #include "productos.h"
+#include "detalleVenta.h"
 using namespace std;
 
 int main()

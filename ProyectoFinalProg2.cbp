@@ -39,9 +39,7 @@
 		<Unit filename="categoria.cpp" />
 		<Unit filename="categoria.h" />
 		<Unit filename="detalleVenta.cpp" />
-		<Unit filename="detalleVenta.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="detalleVenta.h" />
 		<Unit filename="devoluciones.cpp" />
 		<Unit filename="devoluciones.h" />
 		<Unit filename="main.cpp" />

@@ -4,14 +4,22 @@
 class detalleVenta{
     public:
         detalleVenta();
-        void setIDVenta(int id);
+        detalleVenta(int idVenta, int idProducto, int cantidad, float precio, int puntosGanados);
+        void setIDVenta(int idVenta);
         void setIDProducto(int idProducto);
         void setCantidad(int cantidad);
-        void setPrecio(float precio);
+        void setPrecio(float precioUnitario);
+        void setPuntosGanados(int puntosGanados);
+        int getIdPersona();
         int getIDVenta();
         int getIDProducto();
         int getCantidad();
         float getPrecio();
+        void CalcularTotal();
+
+        void ContarPuntos(int idVenta); /* Para contar los puntos */
+        int getPuntosGanados();
+
         void cargar();
         void mostrar();
         bool leerDisco(int pos);
@@ -21,6 +29,7 @@ class detalleVenta{
         int _IDVenta;
         int _IDProducto;
         int _cantidad;
-        float _precio;
+        float _precioUnitario;
+        int _puntosGanados;
 
 };

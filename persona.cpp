@@ -42,13 +42,13 @@ void Persona::setEstado(bool estado){
 }
 
 void Persona::setTelefono(const char* telefono){
-    if(ValidacionTelefono(telefono)){
-        strcpy(_Telefono, telefono);
-    }
     while (ValidacionTelefono(telefono)==false){
         cout<< "TELEFONO INVALIDO"<<endl;
         cout<< "INGRESAR NUEVAMENTE EL TELEFONO: ";
         cin>>_Telefono;
+    }
+    if(ValidacionTelefono(telefono)){
+        strcpy(_Telefono, telefono);
     }
 }
 
@@ -93,19 +93,23 @@ const char* Persona::getDomicilio(){
 }
 
 bool Persona::ValidacionTelefono(const char* telefono){
+    int i;
     int numeros=strlen(telefono);
-    if(numeros<8 || numeros>10){
-        return false;
+    if(numeros==8 || numeros==10){
+        for (i=0; i<numeros; i++){
+            if (isdigit(telefono[i])){
+                return true;
+            }
+        }
     }
-    else {
-        return true;
-    }
+    return false;
 }
 
 void Persona::cargar(){
+    cout<< "EL DNI ES: ";
+    cin>>_Id;
     cout<< "EL NOMBRE ES: ";
     cin>>_Nombres;
-    cin.getline(_Nombres, sizeof(_Nombres));
     cout<< "EL APELLIDO ES: ";
     cin>>_Apellidos;
     cout<< "EL NACIMIENTO ES: ";
@@ -119,6 +123,7 @@ void Persona::cargar(){
 }
 
 void Persona::mostrar(){
+    cout<< "EL DNI ES: "<<getId()<<endl;
     cout<< "EL NOMBRE ES: "<<getNombres()<<endl;
     cout<< "EL APELLIDO ES: "<<getApellidos()<<endl;
     cout<< "EL NACIMIENTO ES: "<<getNacimiento()<<endl;

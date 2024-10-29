@@ -1,10 +1,12 @@
 #pragma once
 #include <string>
 #include "FECHA.h"
+#include "detalleVenta.h"
 
 class Venta{
     public:
         Venta();
+        Venta(int idVenta, int idCliente, int idVendedor, char* fp, bool envio, Fecha fecha, detalleVenta venta);
         void setIDVenta(int id);
         void setIDCliente(int idCliente);
         void setIDVendedor(int idVendedor);
@@ -25,7 +27,6 @@ class Venta{
         int getCantidad();
         float getPrecioUnitario();
 
-        void CalcularTotal();
         void cargar();
         void mostrar();
         bool escribirDisco(int pos);
@@ -37,9 +38,6 @@ class Venta{
         int _idVendedor;
         char _formaDePago[50];
         bool _envio;
-        Fecha fecha;
-
-        int _IDProducto;
-        int _cantidad;
-        float _precioUnitario;
+        Fecha _fecha;
+        detalleVenta _venta;
 };
