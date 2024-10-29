@@ -1,4 +1,5 @@
 #include "detalleVenta.h"
+#include "Cliente.h"
 #include <iostream>
 using namespace std;
 
@@ -31,12 +32,12 @@ void detalleVenta::setCantidad(int cantidad){
     _cantidad=cantidad;
 }
 
-void detalleVenta::setPrecio(float precioUnitario){
-    _precioUnitario=precioUnitario;
-}
-
 void detalleVenta::setPuntosGanados(int puntosGanados){
     _puntosGanados=puntosGanados;
+}
+
+void detalleVenta::setPrecioUnitario(float precioUnitario){
+    _precioUnitario=precioUnitario;
 }
 
 int detalleVenta::getIDVenta(){
@@ -51,7 +52,7 @@ int detalleVenta::getCantidad(){
     return _cantidad;
 }
 
-float detalleVenta::getPrecio(){
+float detalleVenta::getPrecioUnitario(){
     return _precioUnitario;
 }
 
@@ -90,7 +91,7 @@ void detalleVenta::mostrar(){
     cout<< "ID DE VENTA: "<<getIDVenta()<<endl;
     cout<< "ID DE PRODUCTO: "<<getIDProducto()<<endl;
     cout<< "CANTIDAD: "<<getCantidad()<<endl;
-    cout<< "PRECIO: "<<getPrecio()<<endl;
+    cout<< "PRECIO: "<<getPrecioUnitario()<<endl;
 }
 
 bool detalleVenta::escribirDisco(int pos){

@@ -17,6 +17,12 @@ int main()
     Vendedor vendedor(6.0f, 10000.0f, fecha);
     vendedor.mostrar();*/
 
+    Cliente cliente;
+
+    //cliente.setPuntaje(120);
+    cout << cliente.getPuntaje() << endl;
+    cliente.PuntajeMeta(120);
+    //cout << cliente.getPuntaje() << endl;
 
 
     return 0;

@@ -63,19 +63,19 @@ void Cliente::PuntajeMeta(int puntaje)
 
     }
 }
-
-
-void Cliente::cargar(){
+void Cliente::cargar()
+{
     cout<< "------------ "<<"DATOS DEL CLIENTE"<< " --------------"<<endl;
     Persona::cargar();
 }
 
-void Cliente::mostrar(){
+void Cliente::mostrar()
+{
     cout<< "------------ "<<"DATOS DEL CLIENTE"<< " --------------"<<endl;
     Persona::mostrar();
     cout<< "EL CLIENTE "<<" "<<Persona::getId()<<" "<<"TIENE UN PUNTAJE DE: "<<getPuntaje()<<endl;
 }
 
-bool Cliente::escribirDisco(int pos){}
+bool Cliente::escribirDisco(int pos) {}
 
-bool Cliente::leerDisco(int pos){}
+bool Cliente::leerDisco(int pos) {}

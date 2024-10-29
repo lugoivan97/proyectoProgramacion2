@@ -8,13 +8,14 @@ class detalleVenta{
         void setIDVenta(int idVenta);
         void setIDProducto(int idProducto);
         void setCantidad(int cantidad);
-        void setPrecio(float precioUnitario);
+
+        void setPrecioUnitario(float precioUnitario);
         void setPuntosGanados(int puntosGanados);
         int getIdPersona();
         int getIDVenta();
         int getIDProducto();
         int getCantidad();
-        float getPrecio();
+        float getPrecioUnitario();
         void CalcularTotal();
 
         void ContarPuntos(int idVenta); /* Para contar los puntos */
