@@ -8,7 +8,7 @@ Cliente::Cliente(int puntaje):Persona(_Id, _Apellidos, _Nombres, _Nacimiento, _T
     _Puntaje=puntaje;
 }
 
-Cliente::Cliente():Persona(1, "Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com.ar", "Florida 1234"), _Puntaje(0){
+Cliente::Cliente():Persona(1, "Apellido", "Nombre", _Nacimiento, "123456789", "sistema@gestion.com.ar", "Florida 1234"), _Puntaje(0){
 }
 
 void Cliente::setPuntaje(int Puntaje){
@@ -41,7 +41,13 @@ void Cliente::PuntajeMeta(int puntaje)
                     _Puntaje = resto;
                     intentos = 3;
                     cout << "¡Sus puntos han sido canjeados! " << endl;
-                    cout <<"Cantidad de puntos que quedan disponibles: " << getPuntaje() << endl;
+                    if(_Puntaje<0){
+                        _Puntaje = 0;
+                        cout <<"Cantidad de puntos que quedan disponibles: "<< getPuntaje() << endl;
+                    }else{
+                       cout <<"Cantidad de puntos que quedan disponibles: " << getPuntaje() << endl;
+                    }
+
                     break;
                 case 2:
                     cout << "Genial sus puntos quedan guardados para ser utulizados en una proxima ocacion " << endl;

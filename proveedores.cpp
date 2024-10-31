@@ -9,7 +9,7 @@ Proveedores::Proveedores(int id):Persona(_Id, _Apellidos, _Nombres, _Nacimiento,
    _Idproveedor = id;
 }
 
-Proveedores::Proveedores():Persona(1, "Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com", "Florida 1234"), _Idproveedor(1) {
+Proveedores::Proveedores():Persona(1, "Apellido", "Nombre", _Nacimiento, "123456789", "sistema@gestion.com", "Florida 1234"), _Idproveedor(1) {
 }
 
 void Proveedores::setIdproveedor(int id){

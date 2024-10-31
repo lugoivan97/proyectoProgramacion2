@@ -4,7 +4,7 @@
 class Cliente:public Persona{
 public:
     Cliente();
-    Cliente (int puntaje);
+    Cliente(int puntaje);
     void setPuntaje(int Puntaje);
     int getPuntaje();
     void PuntajeMeta(int puntaje);

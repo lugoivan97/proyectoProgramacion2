@@ -12,7 +12,8 @@ class Venta{
         void setIDVendedor(int idVendedor);
         void setFormaDePago(char* fp);
         void setEnvio(bool envio);
-        void setFecha(Fecha fecha);
+        //void setFecha(Fecha fecha);
+        void setFecha(int dia, int mes, int anio);
 
         int getIDVenta();
         const char* getFecha();

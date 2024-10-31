@@ -274,3 +274,105 @@
 	<cstring>
 	<iostream>
 
+1730330398 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\categoria.cpp
+	"categoria.h"
+	<cstring>
+	<iostream>
+
+1730330398 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\categoria.h
+	<string>
+
+1730334293 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\cliente.cpp
+	<iostream>
+	<cstring>
+	"Cliente.h"
+	"persona.h"
+
+1730333623 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\cliente.h
+	"persona.h"
+
+1730338393 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\persona.h
+	"FECHA.h"
+	<string>
+
+1730330398 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\detalleventa.cpp
+	"detalleVenta.h"
+	"Cliente.h"
+	<iostream>
+
+1730330398 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\detalleventa.h
+	<string>
+
+1730330398 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\devoluciones.cpp
+	"devoluciones.h"
+	<cstring>
+	<string>
+	<iostream>
+
+1730330398 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\devoluciones.h
+
+1730330398 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\fecha.cpp
+	"Fecha.h"
+
+1730330398 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\fecha.h
+	<string>
+
+1730340922 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\main.cpp
+	<iostream>
+	<cstring>
+	"cliente.h"
+	"vendedor.h"
+	"categoria.h"
+	"proveedores.h"
+	"persona.h"
+	"venta.h"
+	"FECHA.h"
+	"productos.h"
+	"detalleVenta.h"
+
+1730330398 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\vendedor.h
+	"persona.h"
+	"FECHA.h"
+
+1730330398 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\proveedores.h
+	"persona.h"
+	"categoria.h"
+
+1730335543 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\venta.h
+	<string>
+	"FECHA.h"
+	"detalleVenta.h"
+
+1730330398 c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\productos.h
+	<string>
+	"categoria.h"
+	"FECHA.h"
+
+1730340040 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\persona.cpp
+	"persona.h"
+	<cstring>
+	<iostream>
+
+1730330398 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\productos.cpp
+	"productos.h"
+	<cstring>
+	<iostream>
+
+1730334641 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\proveedores.cpp
+	<iostream>
+	"Proveedores.h"
+	"persona.h"
+
+1730334733 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\vendedor.cpp
+	<iostream>
+	<cstring>
+	"Vendedor.h"
+	"persona.h"
+
+1730337625 source:c:\users\administrator\documents\proyecto_progra_ii\proyectoprogramacion2\venta.cpp
+	"venta.h"
+	"FECHA.h"
+	"persona.h"
+	<cstring>
+	<iostream>
+
