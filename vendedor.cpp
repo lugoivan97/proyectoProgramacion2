@@ -12,7 +12,11 @@ Vendedor::Vendedor(float comision, float comisionPagada, Fecha fecha)
         _fecha=fecha;
 }
 
+<<<<<<< HEAD
 Vendedor::Vendedor():Persona(1, "Apellido", "Nombre",_Nacimiento, "123456789", "sistema@gestion.com", "Florida"), _Comisiones(0.0), _ComisionPagada(0.0) {
+=======
+Vendedor::Vendedor():Persona(1, "Apellido", "Nombre", _Nacimiento, "123456789", "sistema@gestion.com", "Florida"), _Comisiones(0.0), _ComisionPagada(0.0) {
+>>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
 }
 
 void Vendedor::setComisiones(float comisiones){

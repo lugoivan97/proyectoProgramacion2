@@ -16,10 +16,15 @@ Persona::Persona(int id, const char* apellidos, const char* nombres, Fecha nacim
     _Id=id;
     strcpy(_Apellidos, apellidos);
     strcpy(_Nombres, nombres);
+    _Nacimiento=nacimiento;
     strcpy (_Telefono, telefono);
     strcpy(_Mail, mail);
     strcpy(_Domicilio, domicilio);
+<<<<<<< HEAD
     _Nacimiento=nacimiento;
+=======
+
+>>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
 }
 
 void Persona::setId(int id){
@@ -34,6 +39,13 @@ void Persona::setNombres(const char* nombres){
     strcpy(_Nombres, nombres);
 }
 
+<<<<<<< HEAD
+=======
+/*void Persona::setNacimiento(const char* fecha){
+    strcpy(_Nacimiento, fecha);
+}*/
+
+>>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
 void Persona::setEstado(bool estado){
     _Estado = estado;
 }
@@ -75,9 +87,15 @@ const char* Persona::getNombres(){
     return _Nombres;
 }
 
+<<<<<<< HEAD
 string Persona::getNacimiento(){
     return _Nacimiento.toString();
 }
+=======
+/*Fecha Persona::getNacimiento(){
+    return _Fecha;
+}*/
+>>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
 
 bool Persona::getEstado(){
     return _Estado;
@@ -106,16 +124,34 @@ bool Persona::ValidacionTelefono(const char* telefono){
         }
       return true;
     }else{return false;}
+<<<<<<< HEAD
+=======
+}
+
+void Persona::setNacimiento(int dia, int mes, int anio){
+    _Nacimiento.setDia(dia);
+    _Nacimiento.setMes(mes);
+    _Nacimiento.setAnio(anio);
+}
+
+string Persona::getNacimiento(){
+    return _Nacimiento.toString();
+>>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
 }
 
 void Persona::cargar(){
     int dia, mes, anio;
     char separador;
+<<<<<<< HEAD
     cout<< "EL DNI ES: ";
+=======
+
+    cout<< "DNI: ";
+>>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
     cin>>_Id;
-    cout<< "EL NOMBRE ES: ";
+    cout<< "NOMBRE: ";
     cin>>_Nombres;
-    cout<< "EL APELLIDO ES: ";
+    cout<< "APELLIDO: ";
     cin>>_Apellidos;
     cout<< "NACIMIENTO: ";
     cin>> dia >> separador >> mes >> separador >> anio;
@@ -124,7 +160,7 @@ void Persona::cargar(){
     cout<< "TELEFONO: ";
     cin>>_Telefono;
     setTelefono(_Telefono);
-    cout<< "EL MAIL ES: ";
+    cout<< "MAIL: ";
     cin>>_Mail;
 }
 

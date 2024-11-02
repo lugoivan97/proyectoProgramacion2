@@ -17,13 +17,23 @@ int main()
     Vendedor vendedor(6.0f, 10000.0f, fecha);
     vendedor.mostrar();*/
 
+<<<<<<< HEAD
     /*Cliente cliente;*/
 
     //cliente.setPuntaje(120);
     /*cout << cliente.getPuntaje() << endl;
     cliente.PuntajeMeta(120);*/
-    //cout << cliente.getPuntaje() << endl;
+=======
+    /*Cliente cliente;
 
+    cliente.setPuntaje(120);
+    cout << cliente.getPuntaje() << endl;
+    cliente.PuntajeMeta(120);
+>>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
+    //cout << cliente.getPuntaje() << endl;
+    */
+
+<<<<<<< HEAD
     /*Cliente cliente;
 
     detalleVenta venta1(1, 1001, 3, 20.0f, cliente);
@@ -44,6 +54,16 @@ int main()
     venta1.mostrar();
     // Mostrar el puntaje del cliente después de la venta
     cliente1.mostrar();
+=======
+    /*Venta venta;
+
+    venta.cargar();
+    venta.mostrar();*/
+
+    Persona persona;
+    persona.cargar();
+    persona.mostrar();
+>>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
 
     return 0;
 }
