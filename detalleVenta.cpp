@@ -9,15 +9,15 @@ detalleVenta::detalleVenta(){
     _IDProducto=0;
     _cantidad=0;
     _precioUnitario=0.0f;
-    _puntosGanados=0;
 }
 
-detalleVenta::detalleVenta(int idVenta, int idProducto, int cantidad, float precioUnitario, int puntosGanados){
+detalleVenta::detalleVenta(int idVenta, int idProducto, int cantidad, float precioUnitario, Cliente cliente){
     _IDVenta=idVenta;
     _IDProducto=idProducto;
     _cantidad=cantidad;
     _precioUnitario=precioUnitario;
-    _puntosGanados=puntosGanados;
+    ContarPuntos(cliente, idVenta);
+    _puntosGanados = 0;
 }
 
 void detalleVenta::setIDVenta(int idVenta){
@@ -56,22 +56,27 @@ float detalleVenta::getPrecioUnitario(){
     return _precioUnitario;
 }
 
-void detalleVenta::CalcularTotal(){
-    float precioTotal = _cantidad*_precioUnitario;
+float detalleVenta::CalcularTotal(){
+    return _cantidad*_precioUnitario;
 }
 
-void detalleVenta::ContarPuntos(int idVenta){
-    int cantidadProductos=0;
+void detalleVenta::ContarPuntos(Cliente& cliente, int idVenta){
     if(getIDVenta()==idVenta){
-        cantidadProductos+=_cantidad;
-    }
-     for (int i=0; i<cantidadProductos; i++){
-        _puntosGanados+=5;
-    }
+        _puntosGanados=_cantidad*5;
+        cliente.setPuntaje(cliente.getPuntaje() + _puntosGanados);
+}
 }
 
 int detalleVenta::getPuntosGanados(){
-    cout<< "LA CANTIDAD DE PUNTOS ES: "<<_puntosGanados<<endl;
+    return _puntosGanados;
+}
+
+void detalleVenta::actualizarPuntaje(Cliente& cliente) {
+        _puntosGanados = _cantidad * 5;
+        cliente.agregarPuntos(_puntosGanados);
+        if(cliente.getPuntaje()>100){
+            cliente.PuntajeMeta();
+        }
 }
 
 void detalleVenta::cargar(){

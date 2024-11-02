@@ -1,14 +1,13 @@
+#include "Cliente.h"
 #include <iostream>
 #include <cstring>
-#include "Cliente.h"
-#include "persona.h"
 using namespace std;
 
 Cliente::Cliente(int puntaje):Persona(_Id, _Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail, _Domicilio){
     _Puntaje=puntaje;
 }
 
-Cliente::Cliente():Persona(1, "Apellido", "Nombre", "01/01/2024", "123456789", "sistema@gestion.com.ar", "Florida 1234"), _Puntaje(0){
+Cliente::Cliente():Persona(1, "Apellido", "Nombre", _Nacimiento, "123456789", "sistema@gestion.com.ar", "Florida 1234"), _Puntaje(0){
 }
 
 void Cliente::setPuntaje(int Puntaje){
@@ -19,11 +18,16 @@ int Cliente::getPuntaje(){
     return _Puntaje;
 }
 
-void Cliente::PuntajeMeta(int puntaje)
+void Cliente::agregarPuntos(int puntos) {
+        _Puntaje += puntos;
+        cout << "Puntos agregados. Puntaje actual: " << _Puntaje << endl;
+}
+
+void Cliente::PuntajeMeta()
 {
-    if(puntaje>0)
+    if(_Puntaje>0)
     {
-        if(puntaje >=100)
+        if(_Puntaje >=100)
         {
             int intentos = 0;
             int resto;
@@ -44,7 +48,7 @@ void Cliente::PuntajeMeta(int puntaje)
                     cout <<"Cantidad de puntos que quedan disponibles: " << getPuntaje() << endl;
                     break;
                 case 2:
-                    cout << "Genial sus puntos quedan guardados para ser utulizados en una proxima ocacion " << endl;
+                    cout << "Genial sus puntos quedan guardados para ser utulizados en una proxima ocasion " << endl;
                     break;
                 default:
                     intentos++;

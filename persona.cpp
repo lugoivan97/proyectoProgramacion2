@@ -12,13 +12,14 @@ Persona::Persona(){
     strcpy(_Domicilio, "Vicente Lopez 1234");
 }
 
-Persona::Persona(int id, const char* apellidos, const char* nombres, const char* fecha, const char* telefono, const char* mail, const char* domicilio){
+Persona::Persona(int id, const char* apellidos, const char* nombres, Fecha nacimiento, const char* telefono, const char* mail, const char* domicilio){
     _Id=id;
     strcpy(_Apellidos, apellidos);
     strcpy(_Nombres, nombres);
     strcpy (_Telefono, telefono);
     strcpy(_Mail, mail);
     strcpy(_Domicilio, domicilio);
+    _Nacimiento=nacimiento;
 }
 
 void Persona::setId(int id){
@@ -33,16 +34,12 @@ void Persona::setNombres(const char* nombres){
     strcpy(_Nombres, nombres);
 }
 
-void Persona::setNacimiento(const char* fecha){
-    strcpy(_Nacimiento, fecha);
-}
-
 void Persona::setEstado(bool estado){
     _Estado = estado;
 }
 
 void Persona::setTelefono(const char* telefono){
-    while (ValidacionTelefono(telefono)==false){
+    while(ValidacionTelefono(telefono)==false){
         cout<< "TELEFONO INVALIDO"<<endl;
         cout<< "INGRESAR NUEVAMENTE EL TELEFONO: ";
         cin>>_Telefono;
@@ -60,6 +57,12 @@ void Persona::setDomicilio(const char* domicilio){
     strcpy(_Domicilio, domicilio);
 }
 
+void Persona::setNacimiento(int dia, int mes, int anio){
+    _Nacimiento.setDia(dia);
+    _Nacimiento.setMes(mes);
+    _Nacimiento.setAnio(anio);
+}
+
 int Persona::getId(){
     return _Id;
 }
@@ -72,8 +75,8 @@ const char* Persona::getNombres(){
     return _Nombres;
 }
 
-const char* Persona::getNacimiento(){
-    return _Nacimiento;
+string Persona::getNacimiento(){
+    return _Nacimiento.toString();
 }
 
 bool Persona::getEstado(){
@@ -93,30 +96,33 @@ const char* Persona::getDomicilio(){
 }
 
 bool Persona::ValidacionTelefono(const char* telefono){
-    int i;
+    int i, cont =0;
     int numeros=strlen(telefono);
     if(numeros==8 || numeros==10){
         for (i=0; i<numeros; i++){
             if (isdigit(telefono[i])){
-                return true;
+                cont++;
             }
         }
-    }
-    return false;
+      return true;
+    }else{return false;}
 }
 
 void Persona::cargar(){
+    int dia, mes, anio;
+    char separador;
     cout<< "EL DNI ES: ";
     cin>>_Id;
     cout<< "EL NOMBRE ES: ";
     cin>>_Nombres;
     cout<< "EL APELLIDO ES: ";
     cin>>_Apellidos;
-    cout<< "EL NACIMIENTO ES: ";
-    cin>>_Nacimiento;
-    cout<< "EL TELEFONO ES: ";
+    cout<< "NACIMIENTO: ";
+    cin>> dia >> separador >> mes >> separador >> anio;
+    setNacimiento(dia, mes, anio);
+
+    cout<< "TELEFONO: ";
     cin>>_Telefono;
-    cin.getline(_Telefono, sizeof(_Telefono));
     setTelefono(_Telefono);
     cout<< "EL MAIL ES: ";
     cin>>_Mail;

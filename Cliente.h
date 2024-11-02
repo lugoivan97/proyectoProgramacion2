@@ -7,7 +7,8 @@ public:
     Cliente (int puntaje);
     void setPuntaje(int Puntaje);
     int getPuntaje();
-    void PuntajeMeta(int puntaje);
+    void PuntajeMeta();
+    void agregarPuntos(int puntos);
     void cargar();
     void mostrar();
     bool escribirDisco(int pos);

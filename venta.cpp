@@ -10,17 +10,16 @@ Venta::Venta(){
     _idVendedor=0;
     strcpy(_formaDePago, "fp");
     _envio=0;
-    detalleVenta venta;
+    Fecha fecha;
 }
 
-Venta::Venta(int idVenta, int idCliente, int idVendedor, char* fp, bool envio, Fecha fecha, detalleVenta venta){
+Venta::Venta(int idVenta, int idCliente, int idVendedor, char* fp, bool envio, Fecha fecha){
     _IDVenta=idVenta;
     _idCliente=idCliente;
     _idVendedor=idVendedor;
     strcpy(_formaDePago, fp);
     _envio=envio;
     _fecha=fecha;
-    _venta=venta;
 }
 
 void Venta::setIDVenta(int id){
@@ -63,11 +62,14 @@ bool Venta::getEnvio(){
     return _envio;
 }
 
+std::string Venta::getFecha(){
+    return _fecha.toString();
+}
+
 void Venta::cargar(){
     cout<< "INGRESAR EL ID: ";
     cin>>_IDVenta;
     cout<< "INGRESAR LA FECHA: ";
-    Fecha();
     cout<< "INGRESE LA FORMA DE PAGO: ";
     cin>>_formaDePago;
     cout<< "INGRESE SI TIENE ENVIO O NO: ";
@@ -80,13 +82,12 @@ void Venta::cargar(){
 }
 
 void Venta::mostrar(){
-    cout<< "FECHA: "<<_fecha.getAnio()<<_fecha.getMes()<<_fecha.getDia()<<endl;
+    cout<< "FECHA: "<<getFecha()<<endl;
     cout<< "ID DE VENTA: "<< getIDVenta() <<endl;
     cout<< "ID DEL CLIENTE: "<<_idCliente<<endl;
     cout<< "ID DEL VENDEDOR: "<<_idVendedor<<endl;
     cout<< "FORMA DE PAGO: "<<_formaDePago<<endl;
     cout<< "TIENE ENVIO O NO: "<<_envio<<endl;
-    cout<< "CANTIDAD TOTAL DE PUNTOS: "<< _venta.getPuntosGanados()<<endl;
 }
 
 bool Venta::escribirDisco(int pos){

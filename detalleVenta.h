@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
+#include "Cliente.h"
 
 class detalleVenta{
     public:
         detalleVenta();
-        detalleVenta(int idVenta, int idProducto, int cantidad, float precio, int puntosGanados);
+        detalleVenta(int idVenta, int idProducto, int cantidad, float precioUnitario, Cliente cliente);
         void setIDVenta(int idVenta);
         void setIDProducto(int idProducto);
         void setCantidad(int cantidad);
@@ -16,9 +17,10 @@ class detalleVenta{
         int getIDProducto();
         int getCantidad();
         float getPrecioUnitario();
-        void CalcularTotal();
+        float CalcularTotal();
 
-        void ContarPuntos(int idVenta); /* Para contar los puntos */
+        void actualizarPuntaje(Cliente& cliente);
+        void ContarPuntos(Cliente& cliente, int idVenta); /* Para contar los puntos */
         int getPuntosGanados();
 
         void cargar();

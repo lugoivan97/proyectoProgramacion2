@@ -6,7 +6,7 @@
 class Venta{
     public:
         Venta();
-        Venta(int idVenta, int idCliente, int idVendedor, char* fp, bool envio, Fecha fecha, detalleVenta venta);
+        Venta(int idVenta, int idCliente, int idVendedor, char* fp, bool envio, Fecha fecha);
         void setIDVenta(int id);
         void setIDCliente(int idCliente);
         void setIDVendedor(int idVendedor);
@@ -15,7 +15,7 @@ class Venta{
         void setFecha(Fecha fecha);
 
         int getIDVenta();
-        const char* getFecha();
+        std::string getFecha();
         int getIDCliente();
         int getIDVendedor();
         const char* getFormaDePago();
@@ -33,6 +33,4 @@ class Venta{
         char _formaDePago[50];
         bool _envio;
         Fecha _fecha;
-        detalleVenta _venta;
-        Fecha fecha;
 };

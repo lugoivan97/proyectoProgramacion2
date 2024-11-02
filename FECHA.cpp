@@ -1,4 +1,5 @@
 #include "Fecha.h"
+#include <iostream>
 
 Fecha::Fecha(){
     _dia = 0;
