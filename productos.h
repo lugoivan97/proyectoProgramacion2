@@ -12,8 +12,11 @@ class Producto{
         void setPrecio(float precio);
         void setStock(int stock);
         void setDescripcion(char* descripcion);
+        void setFecha(int dia, int mes, int anio);
+        void setCategoria(const Categoria& categoria);
+
         std::string getFecha();
-        void getCategoria();
+        const char* getCategoria();
         int getIDProducto();
         const char* getNombre();
         float getPrecio();
@@ -27,9 +30,9 @@ class Producto{
     private:
         int _IDProducto;
         char _nombre[100];
-        Categoria categoria;
+        Categoria _categoria;
         float _precio;
-        Fecha fecha;
+        Fecha _fecha;
         int _stock;
         char _descripcion[200];
 

@@ -1,25 +1,34 @@
 #pragma once
+#include "FECHA.h"
+#include "proveedores.h"
+#include "productos.h"
 
 class Devoluciones{
     public:
         Devoluciones();
-        Devoluciones(int id, const char* ingresoDevolucion, int idCliente, bool posDevolucion);
+        Devoluciones(Producto idProducto, Proveedores idProveedor, Fecha ingresoDevolucion, bool posDevolucion, int cantidadProductos);
         void setIDProducto(int id);
-        void setIngresoDevolucion(const char* ingresoDevolucion);
-        void setIDCliente(int idCliente);
-        void setPosibilidadDevolucion(bool posDevolucion);
+        void setIngresoDevolucion(int dia, int mes, int anio);
+        void setIDProveedor(int idProveedor);
+        void setDevolucionRealizada(bool DevolucionRealizada);
+        void setcantidadProductos(int cantidadProductos);
+
+        int getcantidadProductos();
         int getIDProducto();
-        const char* getIngresoDevolucion();
-        int getIDCliente();
-        bool getPosibilidadDevolucion();
+        std::string getIngresoDevolucion();
+        int getIDProveedor();
+        bool getDevolucionRealizada();
+
+        void DevolucionExitosa();
         void cargar();
         void mostrar();
         bool escribirDisco(int pos);
         bool leerDisco(int pos);
 
     private:
-        int _IDProducto;
-        char _ingresoDevolucion[16];
-        int _IDCliente;
-        bool _posDevolucion;
+        Producto _idProducto;
+        Proveedores _idProveedor;
+        Fecha _ingresoDevolucion;
+        bool _DevolucionRealizada;
+        int _cantidadProductos;
 };

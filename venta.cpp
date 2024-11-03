@@ -1,6 +1,4 @@
 #include "venta.h"
-#include "FECHA.h"
-#include "persona.h"
 #include <cstring>
 #include <iostream>
 
@@ -44,12 +42,6 @@ void Venta::setEnvio(bool envio){
     _envio=envio;
 }
 
-void Venta::setFecha(int dia, int mes, int anio){
-    _fecha.setDia(dia);
-    _fecha.setMes(mes);
-    _fecha.setAnio(anio);
-}
-
 int Venta::getIDVenta(){
     return _IDVenta;
 }
@@ -75,24 +67,9 @@ std::string Venta::getFecha(){
 }
 
 void Venta::cargar(){
-    Fecha fecha;
-    int dia, mes, anio;
-
     cout<< "INGRESAR EL ID: ";
     cin>>_IDVenta;
-<<<<<<< HEAD
     cout<< "INGRESAR LA FECHA: ";
-=======
-
-    cout<< "INGRESAR LA FECHA (dd/mm/aaaa): ";
-    char separador; // Variable para guardar el '/'
-
-    cin >> dia >> separador >> mes >> separador >> anio;
-
-
-    setFecha(dia, mes, anio);
-
->>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
     cout<< "INGRESE LA FORMA DE PAGO: ";
     cin>>_formaDePago;
     cout<< "INGRESE SI TIENE ENVIO O NO: ";
@@ -104,12 +81,9 @@ void Venta::cargar(){
     cin>>_idVendedor;
 }
 
+
 void Venta::mostrar(){
-<<<<<<< HEAD
     cout<< "FECHA: "<<getFecha()<<endl;
-=======
-    cout<< "FECHA: "<< _fecha.toString() <<endl;
->>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
     cout<< "ID DE VENTA: "<< getIDVenta() <<endl;
     cout<< "ID DEL CLIENTE: "<<_idCliente<<endl;
     cout<< "ID DEL VENDEDOR: "<<_idVendedor<<endl;

@@ -45,13 +45,7 @@ void Cliente::PuntajeMeta()
                     _Puntaje = resto;
                     intentos = 3;
                     cout << "¡Sus puntos han sido canjeados! " << endl;
-                    if(_Puntaje<0){
-                        _Puntaje = 0;
-                        cout <<"Cantidad de puntos que quedan disponibles: "<< getPuntaje() << endl;
-                    }else{
-                       cout <<"Cantidad de puntos que quedan disponibles: " << getPuntaje() << endl;
-                    }
-
+                    cout <<"Cantidad de puntos que quedan disponibles: " << getPuntaje() << endl;
                     break;
                 case 2:
                     cout << "Genial sus puntos quedan guardados para ser utulizados en una proxima ocasion " << endl;

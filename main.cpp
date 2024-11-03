@@ -9,61 +9,38 @@
 #include "FECHA.h"
 #include "productos.h"
 #include "detalleVenta.h"
+#include "devoluciones.h"
 using namespace std;
 
 int main()
 {
-    /*Fecha fecha;
-    Vendedor vendedor(6.0f, 10000.0f, fecha);
-    vendedor.mostrar();*/
-
-<<<<<<< HEAD
-    /*Cliente cliente;*/
-
-    //cliente.setPuntaje(120);
-    /*cout << cliente.getPuntaje() << endl;
-    cliente.PuntajeMeta(120);*/
-=======
-    /*Cliente cliente;
-
-    cliente.setPuntaje(120);
-    cout << cliente.getPuntaje() << endl;
-    cliente.PuntajeMeta(120);
->>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
-    //cout << cliente.getPuntaje() << endl;
-    */
-
-<<<<<<< HEAD
-    /*Cliente cliente;
-
-    detalleVenta venta1(1, 1001, 3, 20.0f, cliente);
-    detalleVenta venta2(1, 1002, 2, 15.0f, cliente);
-    detalleVenta venta3(2, 1001, 1, 10.0f, cliente);
-
-
-    cout<< "LOS PUNTOS SON PARA EL ID DE VENTA 1 SON: "<<venta1.getPuntosGanados()+venta2.getPuntosGanados()<<endl;*/
 
     Cliente cliente1; // Suponiendo que tienes un constructor que inicializa el cliente
     // Inicializar puntaje
 
     // Crear una venta asociada a un cliente
-    detalleVenta venta1;
+    /*detalleVenta venta1;
     venta1.cargar();
     cliente1.cargar();
     venta1.actualizarPuntaje(cliente1);
     venta1.mostrar();
     // Mostrar el puntaje del cliente después de la venta
-    cliente1.mostrar();
-=======
-    /*Venta venta;
+    cliente1.mostrar();*/
+    /*Fecha fecha(2, 11, 2024);
+    Persona persona(12345678, "paz", "lucia", fecha, "12345678", "lulipaz@gmail.com", "san isidro");
 
-    venta.cargar();
-    venta.mostrar();*/
+    persona.mostrar();*/
 
-    Persona persona;
-    persona.cargar();
-    persona.mostrar();
->>>>>>> 83cab5e7c04f267c793303a50b1c04ff43a68df9
+    Producto producto;
+    Devoluciones devolucion;
+
+    devolucion.cargar();
+    devolucion.mostrar();
+
+    producto.cargar();
+    producto.mostrar();
+
+
 
     return 0;
 }
