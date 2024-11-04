@@ -23,6 +23,12 @@ void ComprasAlProveedor::setPrecioTotal(float PrecioTotal){
     _PrecioTotal=PrecioTotal;
 }
 
+void ComprasAlProveedor::setFechaDeCompra(int dia, int mes, int anio){
+    _fecha.setDia(dia);
+    _fecha.setMes(mes);
+    _fecha.setAnio(anio);
+}
+
 int ComprasAlProveedor::getCantidadProductos(){
     return _CantidadProductos;
 }
@@ -35,9 +41,16 @@ float ComprasAlProveedor::getPrecioTotal(){
     return _CantidadProductos*_PrecioUnitario;
 }
 
+string ComprasAlProveedor::getFechaDeCompra(){
+    return _fecha.toString();
+}
+
 void ComprasAlProveedor::cargar(){
-    int idproveedor, idproducto;
-    char nombreproveedor[50], nombreproducto[50];
+    int idproveedor, idproducto, dia, mes, anio;
+    char nombreproveedor[50], nombreproducto[50], separador;
+    cout<< "FECHA DE COMPRA: ";
+    cin>> dia >> separador >> mes >> separador >> anio;
+    setFechaDeCompra(dia, mes, anio);
     cout<< "ID DEL PROVEEDOR: ";
     cin>>idproveedor;
     _proovedor.setId(idproveedor);
@@ -57,6 +70,7 @@ void ComprasAlProveedor::cargar(){
 }
 
 void ComprasAlProveedor::mostrar(){
+    cout<< "FECHA DE COMPRA AL PROVEEDOR: "<<getFechaDeCompra()<<endl;
     cout<< "ID DEL PROVEEDOR: "<<_proovedor.getIdproveedor()<<endl;
     cout<< "MARCA: "<<_proovedor.getMarca()<<endl;
     cout<< "ID DEL PRODUCTO: "<<_producto.getIDProducto()<<endl;
