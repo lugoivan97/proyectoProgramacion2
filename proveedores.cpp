@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "Proveedores.h"
 #include "persona.h"
 
@@ -16,8 +17,16 @@ void Proveedores::setIdproveedor(int id){
     _Idproveedor = id;
 }
 
+void Proveedores::setMarca(const char* marca){
+    strcpy(_Marca, marca);
+}
+
 int Proveedores::getIdproveedor(){
     return _Idproveedor;
+}
+
+const char* Proveedores::getMarca(){
+    return _Marca;
 }
 
 void Proveedores::cargar(){

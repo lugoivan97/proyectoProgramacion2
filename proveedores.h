@@ -8,7 +8,7 @@ public:
     Proveedores(int Idproveedor);
     Categoria categoria();
     void setIdproveedor(int id);
-    void setMarca(char* marca);
+    void setMarca(const char* marca);
     int getIdproveedor();
     const char* getMarca();
     void cargar();
@@ -17,5 +17,5 @@ public:
     bool leerDisco(int pos);
 private:
     int _Idproveedor;
-    char _Marca;
+    char _Marca[50];
 };

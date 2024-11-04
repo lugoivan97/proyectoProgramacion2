@@ -36,6 +36,20 @@ float ComprasAlProveedor::getPrecioTotal(){
 }
 
 void ComprasAlProveedor::cargar(){
+    int idproveedor, idproducto;
+    char nombreproveedor[50], nombreproducto[50];
+    cout<< "ID DEL PROVEEDOR: ";
+    cin>>idproveedor;
+    _proovedor.setId(idproveedor);
+    cout<< "MARCA: ";
+    cin>>nombreproveedor;
+    _proovedor.setMarca(nombreproveedor);
+    cout<<"ID DEL PRODUCTO: ";
+    cin>>idproducto;
+    _producto.setIDProducto(idproducto);
+    cout<< "NOMBRE DEL PRODUCTO: ";
+    cin>>nombreproducto;
+    _producto.setNombre(nombreproducto);
     cout<< "CANTIDAD DE PRODUCTOS COMPRADOS: ";
     cin>>_CantidadProductos;
     cout<< "PRECIO UNITARIO DEL PRODUCTO: ";
@@ -43,6 +57,10 @@ void ComprasAlProveedor::cargar(){
 }
 
 void ComprasAlProveedor::mostrar(){
+    cout<< "ID DEL PROVEEDOR: "<<_proovedor.getIdproveedor()<<endl;
+    cout<< "MARCA: "<<_proovedor.getMarca()<<endl;
+    cout<< "ID DEL PRODUCTO: "<<_producto.getIDProducto()<<endl;
+    cout<< "NOMBRE DEL PRODUCTO: "<<_producto.getNombre()<<endl;
     cout<< "CANTIDAD DE PRODUCTOS COMPRADOS: "<<getCantidadProductos()<<endl;
     cout<< "PRECIO UNITARIO DEL PRODUCTO: "<<getPrecioUnitario()<<endl;
     cout<< "PRECIO TOTAL: "<<getPrecioTotal()<<endl;

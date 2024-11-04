@@ -1,8 +1,12 @@
 #pragma once
 #include "proveedores.h"
+#include "productos.h"
+#include "devoluciones.h"
 
 class ComprasAlProveedor {
 private:
+    Proveedores _proovedor;
+    Producto _producto;
     int _CantidadProductos;
     float _PrecioUnitario;
     float _PrecioTotal;
