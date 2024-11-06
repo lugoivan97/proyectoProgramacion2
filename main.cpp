@@ -31,14 +31,16 @@ int main()
 
     persona.mostrar();*/
 
-    Producto producto;
-    Devoluciones devolucion;
 
+    Producto producto;
+    producto.cargar();
+    producto.mostrar();
+
+    Devoluciones devolucion(producto);  // Pasar el producto por referencia
     devolucion.cargar();
     devolucion.mostrar();
 
-    producto.cargar();
-    producto.mostrar();
+    cout << endl;
 
 
 

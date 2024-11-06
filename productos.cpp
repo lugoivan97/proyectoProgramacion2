@@ -7,7 +7,7 @@ Producto::Producto(): _categoria(), _fecha(){
         _IDProducto=0;
         strcpy(_nombre, "nombre");
         _precio=0.0f;
-        _stock=0;
+        _stock=10;
         strcpy( _descripcion, "descripcion");
 }
 
@@ -79,20 +79,35 @@ const char* Producto::getDescripcion(){
     return _descripcion;
 }
 
+int Producto::actualizarStock(int stocknuevo){
+     if(stocknuevo >= 0) {
+        _stock = stocknuevo;
+    }
+}
+
+
 void Producto::cargar(){
-    int dia, mes, anio;
-    char separador;
+    int dia, mes, anio, IDProducto, stock;
+    char separador, nombre[100], descripcion[200];
+    float precio;
     cout << "-----------------" << "INFORMACION DEL PRODUCTO"<< "-----------------" <<endl;
     cout<< "INGRESAR EL ID DEL PRODUCTO: ";
-    cin>>_IDProducto;
+    cin>>IDProducto;
+    setIDProducto(IDProducto);
     cout<< "INGRESAR NOMBRE DEL PRODUCTO: ";
-    cin>>_nombre;
+    cin.ignore();
+    cin.getline(nombre, 100);
+    setNombre(nombre);
     cout<< "INDICAR DESCRIPCION DEL PRODUCTO: ";
-    cin>>_descripcion;
+    cin.ignore();
+    cin.getline(descripcion, 200);
+    setDescripcion(descripcion);
     cout<< "INGRESAR EL PRECIO: $ ";
-    cin>>_precio;
+    cin>>precio;
+    setPrecio(precio);
     cout<< "INGRESAR EL STOCK: ";
-    cin>>_stock;
+    cin>>stock;
+    setStock(stock);
     cout<< "INDICAR FECHA: ";
     cin>> dia >> separador >> mes >> separador >> anio;
     setFecha(dia, mes, anio);
