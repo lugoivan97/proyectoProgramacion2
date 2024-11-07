@@ -426,14 +426,14 @@
 	<string>
 	"Cliente.h"
 
-1730859944 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\devoluciones.cpp
+1731022790 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\devoluciones.cpp
 	"devoluciones.h"
 	<cstring>
 	<string>
 	<iostream>
 	"productos.h"
 
-1730859750 c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\devoluciones.h
+1731022461 c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\devoluciones.h
 	"FECHA.h"
 	"proveedores.h"
 	"productos.h"
@@ -451,7 +451,7 @@
 	"Fecha.h"
 	<iostream>
 
-1730947386 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\main.cpp
+1731022891 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\main.cpp
 	<iostream>
 	<cstring>
 	"cliente.h"
@@ -513,7 +513,7 @@
 	"productos.h"
 	"devoluciones.h"
 
-1730947379 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\archivoproductos.cpp
+1731021924 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\archivoproductos.cpp
 	"ArchivoProductos.h"
 	<cstring>
 	<iostream>

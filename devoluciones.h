@@ -20,8 +20,9 @@ class Devoluciones{
         int getIDProveedor();
         bool getDevolucionRealizada();
 
+        void ComparacionID(Producto producto);
         void DevolucionExitosa();
-        void cargar();
+        void cargar(Producto producto);
         void mostrar();
         bool escribirDisco(int pos);
         bool leerDisco(int pos);

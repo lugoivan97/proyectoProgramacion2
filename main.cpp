@@ -17,13 +17,27 @@ using namespace std;
 int main()
 {
 
-    ArchivoProductos archivo;
+    /*ArchivoProductos archivo;
 
     Producto productos;
     productos.cargar();
     archivo.grabarRegistroProducto(productos);
 
-    archivo.listarRegistros();
+    archivo.listarRegistros();*/
+
+    Producto producto;
+
+
+    producto.cargar();
+    producto.mostrar();
+
+    Devoluciones devolucion(producto);
+    devolucion.cargar(producto);
+
+    cout << "actualizacion " << endl;
+    producto.mostrar();
+
+
 
     return 0;
 }

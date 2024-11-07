@@ -27,7 +27,10 @@ void Devoluciones::setDevolucionRealizada(bool DevolucionRealizada){
 }
 
 void Devoluciones::setcantidadProductos(int cantidadProductos){
-    _cantidadProductos=cantidadProductos;
+    if(cantidadProductos > 0){
+        _cantidadProductos=cantidadProductos;
+    }
+
 }
 
 int Devoluciones::getIDProducto(){
@@ -64,7 +67,16 @@ void Devoluciones::DevolucionExitosa(){
     }
 }
 
-void Devoluciones::cargar(){
+void Devoluciones::ComparacionID(Producto producto){
+    if(_idProducto.getIDProducto() == producto.getIDProducto()){
+            DevolucionExitosa();
+            mostrar();
+    }else{
+        cout << "PRODUCTO NO ENCONTRADO" << endl;
+    }
+}
+
+void Devoluciones::cargar(Producto producto){
     int id, idproveedor, dia, mes, anio, cantidadProductos;
     bool confirmacion;
     char separador;
@@ -83,7 +95,8 @@ void Devoluciones::cargar(){
     setcantidadProductos(cantidadProductos);
     cout<< "¿DESEA FINALIZAR LA DEVOLUCION? "<< "0-NO 1-SI "<<endl;
     cin>>confirmacion;
-    DevolucionExitosa();
+    ComparacionID(producto);
+    //DevolucionExitosa();
 
 }
 
@@ -92,8 +105,6 @@ void Devoluciones::mostrar(){
     cout<< "ID DEL PRODUCTO: "<<_idProducto.getIDProducto()<<endl;
     cout<< "ID DEL PROVEEDOR: "<<_idProveedor.getIdproveedor()<<endl;
     cout<< "FECHA DE DEVOLUCION: "<<getIngresoDevolucion()<<endl;
-
-    cout<< _idProducto.getStock();
 }
 
 bool Devoluciones::leerDisco(int pos){
