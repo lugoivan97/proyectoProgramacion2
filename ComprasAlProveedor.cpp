@@ -53,10 +53,10 @@ void ComprasAlProveedor::cargar(){
     setFechaDeCompra(dia, mes, anio);
     cout<< "ID DEL PROVEEDOR: ";
     cin>>idproveedor;
-    _proovedor.setId(idproveedor);
+    _proveedor.setId(idproveedor);
     cout<< "MARCA: ";
     cin>>nombreproveedor;
-    _proovedor.setMarca(nombreproveedor);
+    _proveedor.setMarca(nombreproveedor);
     cout<<"ID DEL PRODUCTO: ";
     cin>>idproducto;
     _producto.setIDProducto(idproducto);
@@ -71,8 +71,8 @@ void ComprasAlProveedor::cargar(){
 
 void ComprasAlProveedor::mostrar(){
     cout<< "FECHA DE COMPRA AL PROVEEDOR: "<<getFechaDeCompra()<<endl;
-    cout<< "ID DEL PROVEEDOR: "<<_proovedor.getIdproveedor()<<endl;
-    cout<< "MARCA: "<<_proovedor.getMarca()<<endl;
+    cout<< "ID DEL PROVEEDOR: "<<_proveedor.getIdproveedor()<<endl;
+    cout<< "MARCA: "<<_proveedor.getMarca()<<endl;
     cout<< "ID DEL PRODUCTO: "<<_producto.getIDProducto()<<endl;
     cout<< "NOMBRE DEL PRODUCTO: "<<_producto.getNombre()<<endl;
     cout<< "CANTIDAD DE PRODUCTOS COMPRADOS: "<<getCantidadProductos()<<endl;

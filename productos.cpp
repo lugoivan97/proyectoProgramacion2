@@ -1,9 +1,10 @@
 #include "productos.h"
+#include <limits>
 #include <cstring>
 #include <iostream>
 using namespace std;
 
-Producto::Producto(): _categoria(), _fecha(){
+Producto::Producto(): _fecha(){
         _IDProducto=0;
         strcpy(_nombre, "nombre");
         _precio=0.0f;
@@ -11,13 +12,12 @@ Producto::Producto(): _categoria(), _fecha(){
         strcpy( _descripcion, "descripcion");
 }
 
-Producto::Producto(int id, char* nombre, float precio, int stock, char* descripcion, Fecha fecha, Categoria categoria){
+Producto::Producto(int id, char* nombre, float precio, int stock, char* descripcion, Fecha fecha){
     _IDProducto=id;
     strcpy(_nombre, nombre);
     _precio=precio;
     _stock=stock;
     strcpy(_descripcion, descripcion);
-    _categoria=categoria;
     _fecha=fecha;
 }
 
@@ -47,16 +47,8 @@ void Producto::setFecha(int dia, int mes, int anio){
     _fecha.setAnio(anio);
 }
 
-void Producto::setCategoria(const Categoria& categoria){
-    _categoria=categoria;
-}
-
 std::string Producto::getFecha(){
     return _fecha.toString();
-}
-
-const char* Producto::getCategoria(){
-    return _categoria.getNombreCategoria();
 }
 
 int Producto::getIDProducto(){
@@ -99,7 +91,6 @@ void Producto::cargar(){
     cin.getline(nombre, 100);
     setNombre(nombre);
     cout<< "INDICAR DESCRIPCION DEL PRODUCTO: ";
-    cin.ignore();
     cin.getline(descripcion, 200);
     setDescripcion(descripcion);
     cout<< "INGRESAR EL PRECIO: $ ";

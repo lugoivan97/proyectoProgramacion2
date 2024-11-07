@@ -10,39 +10,20 @@
 #include "productos.h"
 #include "detalleVenta.h"
 #include "devoluciones.h"
+#include "ArchivoProductos.h"
+
 using namespace std;
 
 int main()
 {
 
-    Cliente cliente1; // Suponiendo que tienes un constructor que inicializa el cliente
-    // Inicializar puntaje
+    ArchivoProductos archivo;
 
-    // Crear una venta asociada a un cliente
-    /*detalleVenta venta1;
-    venta1.cargar();
-    cliente1.cargar();
-    venta1.actualizarPuntaje(cliente1);
-    venta1.mostrar();
-    // Mostrar el puntaje del cliente después de la venta
-    cliente1.mostrar();*/
-    /*Fecha fecha(2, 11, 2024);
-    Persona persona(12345678, "paz", "lucia", fecha, "12345678", "lulipaz@gmail.com", "san isidro");
+    Producto productos;
+    productos.cargar();
+    archivo.grabarRegistroProducto(productos);
 
-    persona.mostrar();*/
-
-
-    Producto producto;
-    producto.cargar();
-    producto.mostrar();
-
-    Devoluciones devolucion(producto);  // Pasar el producto por referencia
-    devolucion.cargar();
-    devolucion.mostrar();
-
-    cout << endl;
-
-
+    archivo.listarRegistros();
 
     return 0;
 }

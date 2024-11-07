@@ -426,7 +426,7 @@
 	<string>
 	"Cliente.h"
 
-1730859824 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\devoluciones.cpp
+1730859944 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\devoluciones.cpp
 	"devoluciones.h"
 	<cstring>
 	<string>
@@ -442,7 +442,7 @@
 	"persona.h"
 	"categoria.h"
 
-1730858173 c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\productos.h
+1730936672 c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\productos.h
 	<string>
 	"categoria.h"
 	"FECHA.h"
@@ -451,7 +451,7 @@
 	"Fecha.h"
 	<iostream>
 
-1730859659 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\main.cpp
+1730947386 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\main.cpp
 	<iostream>
 	<cstring>
 	"cliente.h"
@@ -464,6 +464,7 @@
 	"productos.h"
 	"detalleVenta.h"
 	"devoluciones.h"
+	"ArchivoProductos.h"
 
 1730762722 c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\vendedor.h
 	"persona.h"
@@ -479,8 +480,9 @@
 	<cstring>
 	<iostream>
 
-1730859659 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\productos.cpp
+1730938442 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\productos.cpp
 	"productos.h"
+	<limits>
 	<cstring>
 	<iostream>
 
@@ -500,4 +502,22 @@
 	"venta.h"
 	<cstring>
 	<iostream>
+
+1730936487 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\comprasalproveedor.cpp
+	"ComprasAlProveedor.h"
+	<cstring>
+	<iostream>
+
+1730936402 c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\comprasalproveedor.h
+	"proveedores.h"
+	"productos.h"
+	"devoluciones.h"
+
+1730947379 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\archivoproductos.cpp
+	"ArchivoProductos.h"
+	<cstring>
+	<iostream>
+
+1730947748 c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\archivoproductos.h
+	"productos.h"
 

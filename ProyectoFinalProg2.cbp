@@ -32,12 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ArchivoProductos.cpp" />
+		<Unit filename="ArchivoProductos.h" />
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
+		<Unit filename="ComprasAlProveedor.cpp" />
+		<Unit filename="ComprasAlProveedor.h" />
 		<Unit filename="FECHA.cpp" />
 		<Unit filename="FECHA.h" />
-		<Unit filename="categoria.cpp" />
-		<Unit filename="categoria.h" />
 		<Unit filename="detalleVenta.cpp" />
 		<Unit filename="detalleVenta.h" />
 		<Unit filename="devoluciones.cpp" />
