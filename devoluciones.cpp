@@ -9,7 +9,9 @@ using namespace std;
 Devoluciones::Devoluciones(Producto& producto):_idProducto(producto){}
 
 void Devoluciones::setIDProducto(int id){
-    _idProducto.setIDProducto(id);
+    if(id > 0){
+        _idProducto.setIDProducto(id);
+    }
 }
 
 void Devoluciones::setIngresoDevolucion(int dia, int mes, int anio){
@@ -19,7 +21,9 @@ void Devoluciones::setIngresoDevolucion(int dia, int mes, int anio){
 }
 
 void Devoluciones::setIDProveedor(int idProveedor){
-    _idProveedor.setIdproveedor(idProveedor);
+    if(idProveedor > 0){
+        _idProveedor.setIdproveedor(idProveedor);
+    }
 }
 
 void Devoluciones::setDevolucionRealizada(bool DevolucionRealizada){

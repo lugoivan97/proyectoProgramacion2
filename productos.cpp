@@ -22,7 +22,9 @@ Producto::Producto(int id, char* nombre, float precio, int stock, char* descripc
 }
 
 void Producto::setIDProducto(int id){
-        _IDProducto=id;
+        if(id > 0){
+            _IDProducto=id;
+        }
 }
 
 void Producto::setNombre(char* nombre){
@@ -30,11 +32,15 @@ void Producto::setNombre(char* nombre){
 }
 
 void Producto::setPrecio(float precio){
-        _precio=precio;
+        if(precio > 0){
+            _precio=precio;
+        }
 }
 
 void Producto::setStock(int stock){
-        _stock=stock;
+        if(stock > 0){
+            _stock=stock;
+        }
 }
 
 void Producto::setDescripcion(char* descripcion){

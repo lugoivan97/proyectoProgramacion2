@@ -12,15 +12,21 @@ ComprasAlProveedor::ComprasAlProveedor(int CantidadProductos, float PrecioUnitar
 }
 
 void ComprasAlProveedor::setCantidadProductos(int CantidadProductos){
-    _CantidadProductos=CantidadProductos;
+    if(CantidadProductos > 0){
+        _CantidadProductos=CantidadProductos;
+    }
 }
 
 void ComprasAlProveedor::setPrecioUnitario(float PrecioUnitario){
-    _PrecioUnitario=PrecioUnitario;
+    if(PrecioUnitario > 0){
+        _PrecioUnitario=PrecioUnitario;
+    }
 }
 
 void ComprasAlProveedor::setPrecioTotal(float PrecioTotal){
-    _PrecioTotal=PrecioTotal;
+    if(PrecioTotal > 0){
+        _PrecioTotal=PrecioTotal;
+    }
 }
 
 void ComprasAlProveedor::setFechaDeCompra(int dia, int mes, int anio){

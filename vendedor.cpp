@@ -15,7 +15,9 @@ Vendedor::Vendedor():Persona(1, "Apellido", "Nombre",_Nacimiento, "123456789", "
 
 
 void Vendedor::setComisiones(float comisiones){
-    _Comisiones = comisiones;
+    if(comisiones > 0){
+        _Comisiones = comisiones;
+    }
 }
 
 void Vendedor::setComisionPagada(float comisionPagada){

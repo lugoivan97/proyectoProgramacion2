@@ -25,19 +25,27 @@ void detalleVenta::setIDVenta(int idVenta){
 }
 
 void detalleVenta::setIDProducto(int idProducto){
-    _IDProducto=idProducto;
+    if( idProducto > 0){
+        _IDProducto=idProducto;
+    }
 }
 
 void detalleVenta::setCantidad(int cantidad){
-    _cantidad=cantidad;
+    if(cantidad > 0){
+        _cantidad=cantidad;
+    }
 }
 
 void detalleVenta::setPuntosGanados(int puntosGanados){
-    _puntosGanados=puntosGanados;
+    if(puntosGanados > 0){
+        _puntosGanados=puntosGanados;
+    }
 }
 
 void detalleVenta::setPrecioUnitario(float precioUnitario){
-    _precioUnitario=precioUnitario;
+    if(precioUnitario > 0){
+        _precioUnitario=precioUnitario;
+    }
 }
 
 int detalleVenta::getIDVenta(){

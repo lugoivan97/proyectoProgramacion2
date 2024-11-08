@@ -14,7 +14,9 @@ Proveedores::Proveedores():Persona(1, "Apellido", "Nombre", _Nacimiento, "123456
 }
 
 void Proveedores::setIdproveedor(int id){
-    _Idproveedor = id;
+    if(id > 0){
+        _Idproveedor = id;
+    }
 }
 
 void Proveedores::setMarca(const char* marca){
