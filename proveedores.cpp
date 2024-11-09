@@ -22,7 +22,11 @@ Proveedores::Proveedores(int id, const char* marca, bool estado, const char* con
 }
 
 void Proveedores::setIdproveedor(int id){
+<<<<<<< HEAD
     if(id>0){
+=======
+    if(id > 0){
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
         _Idproveedor = id;
     }
 }

@@ -25,12 +25,17 @@ void detalleVenta::setIDVenta(int idVenta){
 }
 
 void detalleVenta::setIDProducto(int idProducto){
+<<<<<<< HEAD
     if(idProducto>0){
+=======
+    if( idProducto > 0){
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
         _IDProducto=idProducto;
     }
 }
 
 void detalleVenta::setCantidad(int cantidad){
+<<<<<<< HEAD
    if(cantidad>0){
         _cantidad=cantidad;
    }
@@ -38,10 +43,20 @@ void detalleVenta::setCantidad(int cantidad){
 
 void detalleVenta::setPuntosGanados(int puntosGanados){
     if(puntosGanados>0){
+=======
+    if(cantidad > 0){
+        _cantidad=cantidad;
+    }
+}
+
+void detalleVenta::setPuntosGanados(int puntosGanados){
+    if(puntosGanados > 0){
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
         _puntosGanados=puntosGanados;
     }
 }
 
+<<<<<<< HEAD
 /*void detalleVenta::setPrecioUnitario(float precioUnitario){
     _precioUnitario=precioUnitario;
 }*/
@@ -57,6 +72,11 @@ void detalleVenta::setPrecioTotal(Producto producto){
     }
     else {
         cout<< "EL ID NO COINCIDE"<<endl;
+=======
+void detalleVenta::setPrecioUnitario(float precioUnitario){
+    if(precioUnitario > 0){
+        _precioUnitario=precioUnitario;
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
     }
 }
 

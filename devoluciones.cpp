@@ -9,7 +9,11 @@ using namespace std;
 Devoluciones::Devoluciones(Producto& producto):_idProducto(producto){}
 
 void Devoluciones::setIDProducto(int id){
+<<<<<<< HEAD
     if(id>0){
+=======
+    if(id > 0){
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
         _idProducto.setIDProducto(id);
     }
 }
@@ -21,7 +25,11 @@ void Devoluciones::setIngresoDevolucion(int dia, int mes, int anio){
 }
 
 void Devoluciones::setIDProveedor(int idProveedor){
+<<<<<<< HEAD
     if(idProveedor>0){
+=======
+    if(idProveedor > 0){
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
         _idProveedor.setIdproveedor(idProveedor);
     }
 }
@@ -31,9 +39,16 @@ void Devoluciones::setDevolucionRealizada(bool DevolucionRealizada){
 }
 
 void Devoluciones::setcantidadProductos(int cantidadProductos){
+<<<<<<< HEAD
     if(cantidadProductos>0){
         _cantidadProductos=cantidadProductos;
     }
+=======
+    if(cantidadProductos > 0){
+        _cantidadProductos=cantidadProductos;
+    }
+
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
 }
 
 int Devoluciones::getIDProducto(){
@@ -57,6 +72,7 @@ int Devoluciones::getcantidadProductos(){
 }
 
 void Devoluciones::DevolucionExitosa(){
+    int nuevoStock;
     if(getDevolucionRealizada()==1){
                  int stockActual = _idProducto.getStock();
                  int cantidadADevolver = getcantidadProductos();
@@ -99,6 +115,10 @@ void Devoluciones::cargar(Producto producto){
     cin>>confirmacion;
     ComparacionID(producto);
     //DevolucionExitosa();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
 }
 
 void Devoluciones::mostrar(){
@@ -106,8 +126,11 @@ void Devoluciones::mostrar(){
     cout<< "ID DEL PRODUCTO: "<<_idProducto.getIDProducto()<<endl;
     cout<< "ID DEL PROVEEDOR: "<<_idProveedor.getIdproveedor()<<endl;
     cout<< "FECHA DE DEVOLUCION: "<<getIngresoDevolucion()<<endl;
+<<<<<<< HEAD
 
     cout<< _idProducto.getStock();
+=======
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
 }
 
 bool Devoluciones::leerDisco(int pos){

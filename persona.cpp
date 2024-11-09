@@ -24,7 +24,10 @@ Persona::Persona(int id, const char* apellidos, const char* nombres, Fecha nacim
 }
 
 void Persona::setId(int id){
-    _Id = id;
+    if(id > 0){
+        _Id = id;
+    }
+
 }
 
 void Persona::setApellidos(const char* apellidos){

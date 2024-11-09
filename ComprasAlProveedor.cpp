@@ -12,15 +12,21 @@ ComprasAlProveedor::ComprasAlProveedor(int CantidadProductos, float PrecioUnitar
 }
 
 void ComprasAlProveedor::setCantidadProductos(int CantidadProductos){
-    _CantidadProductos=CantidadProductos;
+    if(CantidadProductos > 0){
+        _CantidadProductos=CantidadProductos;
+    }
 }
 
 void ComprasAlProveedor::setPrecioUnitario(float PrecioUnitario){
-    _PrecioUnitario=PrecioUnitario;
+    if(PrecioUnitario > 0){
+        _PrecioUnitario=PrecioUnitario;
+    }
 }
 
 void ComprasAlProveedor::setPrecioTotal(float PrecioTotal){
-    _PrecioTotal=PrecioTotal;
+    if(PrecioTotal > 0){
+        _PrecioTotal=PrecioTotal;
+    }
 }
 
 void ComprasAlProveedor::setFechaDeCompra(int dia, int mes, int anio){
@@ -53,7 +59,11 @@ void ComprasAlProveedor::cargar(){
     setFechaDeCompra(dia, mes, anio);
     cout<< "ID DEL PROVEEDOR: ";
     cin>>idproveedor;
+<<<<<<< HEAD
     _proveedor.setIdproveedor(idproveedor);
+=======
+    _proveedor.setId(idproveedor);
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
     cout<< "MARCA: ";
     cin>>nombreproveedor;
     _proveedor.setMarca(nombreproveedor);

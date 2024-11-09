@@ -14,7 +14,11 @@ Vendedor::Vendedor(float comision, float comisionPagada, Fecha fechaIngreso):Per
 Vendedor::Vendedor():Persona(1, "Apellido", "Nombre",_Nacimiento, "123456789", "sistema@gestion.com", "Florida"), _Comisiones(0.0), _ComisionPagada(0.0), _fechaIngreso(){}
 
 void Vendedor::setComisiones(float comisiones){
+<<<<<<< HEAD
     if(comisiones>0){
+=======
+    if(comisiones > 0){
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
         _Comisiones = comisiones;
     }
 }

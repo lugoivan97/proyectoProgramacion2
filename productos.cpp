@@ -1,4 +1,5 @@
 #include "productos.h"
+#include <limits>
 #include <cstring>
 #include <iostream>
 using namespace std;
@@ -7,7 +8,7 @@ Producto::Producto(): _fecha(){
         _IDProducto=0;
         strcpy(_nombre, "nombre");
         _precio=0.0f;
-        _stock=0;
+        _stock=10;
         strcpy( _descripcion, "descripcion");
 }
 
@@ -21,7 +22,9 @@ Producto::Producto(int id, char* nombre, float precio, int stock, char* descripc
 }
 
 void Producto::setIDProducto(int id){
-        _IDProducto=id;
+        if(id > 0){
+            _IDProducto=id;
+        }
 }
 
 void Producto::setNombre(char* nombre){
@@ -29,11 +32,15 @@ void Producto::setNombre(char* nombre){
 }
 
 void Producto::setPrecio(float precio){
-        _precio=precio;
+        if(precio > 0){
+            _precio=precio;
+        }
 }
 
 void Producto::setStock(int stock){
-        _stock=stock;
+        if(stock > 0){
+            _stock=stock;
+        }
 }
 
 void Producto::setDescripcion(char* descripcion){
@@ -76,21 +83,40 @@ int Producto::actualizarStock(int stocknuevo){
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
 void Producto::cargar(){
-    int dia, mes, anio;
-    char separador;
+    int dia, mes, anio, IDProducto, stock;
+    char separador, nombre[100], descripcion[200];
+    float precio;
     cout << "-----------------" << "INFORMACION DEL PRODUCTO"<< "-----------------" <<endl;
     cout<< "INGRESAR EL ID DEL PRODUCTO: ";
+<<<<<<< HEAD
     cin>>_IDProducto;
     cin.ignore();
     cout<< "INGRESAR NOMBRE DEL PRODUCTO: ";
     cin.getline(_nombre, 100);
     cout<< "INDICAR DESCRIPCION DEL PRODUCTO: ";
     cin.getline(_descripcion, 200);
+=======
+    cin>>IDProducto;
+    setIDProducto(IDProducto);
+    cout<< "INGRESAR NOMBRE DEL PRODUCTO: ";
+    cin.ignore();
+    cin.getline(nombre, 100);
+    setNombre(nombre);
+    cout<< "INDICAR DESCRIPCION DEL PRODUCTO: ";
+    cin.getline(descripcion, 200);
+    setDescripcion(descripcion);
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
     cout<< "INGRESAR EL PRECIO: $ ";
-    cin>>_precio;
+    cin>>precio;
+    setPrecio(precio);
     cout<< "INGRESAR EL STOCK: ";
-    cin>>_stock;
+    cin>>stock;
+    setStock(stock);
     cout<< "INDICAR FECHA: ";
     cin>> dia >> separador >> mes >> separador >> anio;
     setFecha(dia, mes, anio);

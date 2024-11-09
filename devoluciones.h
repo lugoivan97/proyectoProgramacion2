@@ -5,7 +5,10 @@
 
 class Devoluciones{
     public:
+<<<<<<< HEAD
         Devoluciones();
+=======
+>>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
         Devoluciones(Producto& producto);
         //Devoluciones(Producto idProducto, Proveedores idProveedor, Fecha ingresoDevolucion, bool posDevolucion, int cantidadProductos);
         void setIDProducto(int id);
