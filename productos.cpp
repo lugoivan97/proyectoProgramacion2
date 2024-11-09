@@ -83,34 +83,18 @@ int Producto::actualizarStock(int stocknuevo){
     }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
 void Producto::cargar(){
     int dia, mes, anio, IDProducto, stock;
     char separador, nombre[100], descripcion[200];
     float precio;
     cout << "-----------------" << "INFORMACION DEL PRODUCTO"<< "-----------------" <<endl;
     cout<< "INGRESAR EL ID DEL PRODUCTO: ";
-<<<<<<< HEAD
     cin>>_IDProducto;
     cin.ignore();
     cout<< "INGRESAR NOMBRE DEL PRODUCTO: ";
     cin.getline(_nombre, 100);
     cout<< "INDICAR DESCRIPCION DEL PRODUCTO: ";
     cin.getline(_descripcion, 200);
-=======
-    cin>>IDProducto;
-    setIDProducto(IDProducto);
-    cout<< "INGRESAR NOMBRE DEL PRODUCTO: ";
-    cin.ignore();
-    cin.getline(nombre, 100);
-    setNombre(nombre);
-    cout<< "INDICAR DESCRIPCION DEL PRODUCTO: ";
-    cin.getline(descripcion, 200);
-    setDescripcion(descripcion);
->>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
     cout<< "INGRESAR EL PRECIO: $ ";
     cin>>precio;
     setPrecio(precio);

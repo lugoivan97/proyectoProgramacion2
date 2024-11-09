@@ -59,11 +59,7 @@ void ComprasAlProveedor::cargar(){
     setFechaDeCompra(dia, mes, anio);
     cout<< "ID DEL PROVEEDOR: ";
     cin>>idproveedor;
-<<<<<<< HEAD
     _proveedor.setIdproveedor(idproveedor);
-=======
-    _proveedor.setId(idproveedor);
->>>>>>> 5c31e464d338569f62f6d37b7adcd12ed7ef7aad
     cout<< "MARCA: ";
     cin>>nombreproveedor;
     _proveedor.setMarca(nombreproveedor);
