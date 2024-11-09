@@ -2,17 +2,16 @@
 #include <cstring>
 #include <string>
 #include <iostream>
+#include "productos.h"
 
 using namespace std;
 
-Devoluciones::Devoluciones(){
-}
-
-Devoluciones::Devoluciones(Producto idProducto, Proveedores idProveedor, Fecha ingresoDevolucion, bool DevolucionRealizada, int cantidadProductos): _idProducto(idProducto), _idProveedor(idProveedor), _ingresoDevolucion(ingresoDevolucion), _DevolucionRealizada(DevolucionRealizada), _cantidadProductos(cantidadProductos){
-}
+Devoluciones::Devoluciones(Producto& producto):_idProducto(producto){}
 
 void Devoluciones::setIDProducto(int id){
-    _idProducto.setIDProducto(id);
+    if(id>0){
+        _idProducto.setIDProducto(id);
+    }
 }
 
 void Devoluciones::setIngresoDevolucion(int dia, int mes, int anio){
@@ -22,7 +21,9 @@ void Devoluciones::setIngresoDevolucion(int dia, int mes, int anio){
 }
 
 void Devoluciones::setIDProveedor(int idProveedor){
-    _idProveedor.setIdproveedor(idProveedor);
+    if(idProveedor>0){
+        _idProveedor.setIdproveedor(idProveedor);
+    }
 }
 
 void Devoluciones::setDevolucionRealizada(bool DevolucionRealizada){
@@ -30,7 +31,9 @@ void Devoluciones::setDevolucionRealizada(bool DevolucionRealizada){
 }
 
 void Devoluciones::setcantidadProductos(int cantidadProductos){
-    _cantidadProductos=cantidadProductos;
+    if(cantidadProductos>0){
+        _cantidadProductos=cantidadProductos;
+    }
 }
 
 int Devoluciones::getIDProducto(){
@@ -55,17 +58,28 @@ int Devoluciones::getcantidadProductos(){
 
 void Devoluciones::DevolucionExitosa(){
     if(getDevolucionRealizada()==1){
-        cout<< "LA DEVOLUCION FUE REALIZADA CON EXITO"<<endl;
-        int nuevoStock= _idProducto.getStock() - _cantidadProductos;
-        _idProducto.setStock(nuevoStock);
+                 int stockActual = _idProducto.getStock();
+                 int cantidadADevolver = getcantidadProductos();
+                 int nuevoStock = stockActual - cantidadADevolver;
+                 _idProducto.actualizarStock(nuevoStock);
+                 cout<< "LA DEVOLUCION FUE REALIZADA CON EXITO"<<endl;
     }
     else {
         cout<< "LA DEVOLUCION FUE CANCELADA EXITOSAMENTE"<<endl;
     }
 }
 
-void Devoluciones::cargar(){
-    int id, idproveedor, dia, mes, anio;
+void Devoluciones::ComparacionID(Producto producto){
+    if(_idProducto.getIDProducto() == producto.getIDProducto()){
+            DevolucionExitosa();
+            mostrar();
+    }else{
+        cout << "PRODUCTO NO ENCONTRADO" << endl;
+    }
+}
+
+void Devoluciones::cargar(Producto producto){
+    int id, idproveedor, dia, mes, anio, cantidadProductos;
     bool confirmacion;
     char separador;
     cout<< "-------------"<<"DEVOLUCIONES AL PROVEEDOR"<< "-------------"<<endl;
@@ -79,10 +93,12 @@ void Devoluciones::cargar(){
     cin>> dia >> separador >> mes >> separador >> anio;
     setIngresoDevolucion(dia, mes, anio);
     cout<< "¿CUANTOS PRODUCTOS DEL ID "<<_idProducto.getIDProducto()<<" DESEA REALIZAR LA DEVOLUCION?"<<endl;
-    cin>>_cantidadProductos;
+    cin>>cantidadProductos;
+    setcantidadProductos(cantidadProductos);
     cout<< "¿DESEA FINALIZAR LA DEVOLUCION? "<< "0-NO 1-SI "<<endl;
     cin>>confirmacion;
-
+    ComparacionID(producto);
+    //DevolucionExitosa();
 }
 
 void Devoluciones::mostrar(){
@@ -90,7 +106,8 @@ void Devoluciones::mostrar(){
     cout<< "ID DEL PRODUCTO: "<<_idProducto.getIDProducto()<<endl;
     cout<< "ID DEL PROVEEDOR: "<<_idProveedor.getIdproveedor()<<endl;
     cout<< "FECHA DE DEVOLUCION: "<<getIngresoDevolucion()<<endl;
-    DevolucionExitosa();
+
+    cout<< _idProducto.getStock();
 }
 
 bool Devoluciones::leerDisco(int pos){

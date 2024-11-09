@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-Producto::Producto(): _categoria(), _fecha(){
+Producto::Producto(): _fecha(){
         _IDProducto=0;
         strcpy(_nombre, "nombre");
         _precio=0.0f;
@@ -11,13 +11,12 @@ Producto::Producto(): _categoria(), _fecha(){
         strcpy( _descripcion, "descripcion");
 }
 
-Producto::Producto(int id, char* nombre, float precio, int stock, char* descripcion, Fecha fecha, Categoria categoria){
+Producto::Producto(int id, char* nombre, float precio, int stock, char* descripcion, Fecha fecha){
     _IDProducto=id;
     strcpy(_nombre, nombre);
     _precio=precio;
     _stock=stock;
     strcpy(_descripcion, descripcion);
-    _categoria=categoria;
     _fecha=fecha;
 }
 
@@ -47,16 +46,8 @@ void Producto::setFecha(int dia, int mes, int anio){
     _fecha.setAnio(anio);
 }
 
-void Producto::setCategoria(const Categoria& categoria){
-    _categoria=categoria;
-}
-
 std::string Producto::getFecha(){
     return _fecha.toString();
-}
-
-const char* Producto::getCategoria(){
-    return _categoria.getNombreCategoria();
 }
 
 int Producto::getIDProducto(){
@@ -79,16 +70,23 @@ const char* Producto::getDescripcion(){
     return _descripcion;
 }
 
+int Producto::actualizarStock(int stocknuevo){
+     if(stocknuevo >= 0) {
+        _stock = stocknuevo;
+    }
+}
+
 void Producto::cargar(){
     int dia, mes, anio;
     char separador;
     cout << "-----------------" << "INFORMACION DEL PRODUCTO"<< "-----------------" <<endl;
     cout<< "INGRESAR EL ID DEL PRODUCTO: ";
     cin>>_IDProducto;
+    cin.ignore();
     cout<< "INGRESAR NOMBRE DEL PRODUCTO: ";
-    cin>>_nombre;
+    cin.getline(_nombre, 100);
     cout<< "INDICAR DESCRIPCION DEL PRODUCTO: ";
-    cin>>_descripcion;
+    cin.getline(_descripcion, 200);
     cout<< "INGRESAR EL PRECIO: $ ";
     cin>>_precio;
     cout<< "INGRESAR EL STOCK: ";
@@ -103,7 +101,7 @@ void Producto::mostrar(){
     cout<< "ID DEL PRODUCTO: "<<getIDProducto()<<endl;
     cout<< "NOMBRE DEL PRODUCTO: "<<getNombre()<<endl;
     cout<< "DESCRIPCION DEL PRODUCTO: "<<getDescripcion()<<endl;
-    cout<< "PRECIO: "<<getPrecio()<<endl;
+    cout<< "PRECIO: $ "<<getPrecio()<<endl;
     cout<< "STOCK DEL PRODUCTO: "<<getStock()<<endl;
     cout<< "FECHA: "<<getFecha()<<endl;
 }

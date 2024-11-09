@@ -6,16 +6,16 @@ using namespace std;
 
 Venta::Venta(){
     _IDVenta=0;
-    _idCliente=0;
+    Cliente _cliente;
     _idVendedor=0;
     strcpy(_formaDePago, "fp");
     _envio=0;
-    Fecha fecha;
+    Fecha _fecha;
 }
 
-Venta::Venta(int idVenta, int idCliente, int idVendedor, char* fp, bool envio, Fecha fecha){
+Venta::Venta(int idVenta, Cliente cliente, int idVendedor, char* fp, bool envio, Fecha fecha){
     _IDVenta=idVenta;
-    _idCliente=idCliente;
+    _cliente=cliente;
     _idVendedor=idVendedor;
     strcpy(_formaDePago, fp);
     _envio=envio;
@@ -26,8 +26,8 @@ void Venta::setIDVenta(int id){
     _IDVenta=id;
 }
 
-void Venta::setIDCliente(int idCliente){
-    _idCliente=idCliente;
+void Venta::setCliente(){
+    _cliente.cargar();
 }
 
 void Venta::setIDVendedor(int idVendedor){
@@ -42,12 +42,18 @@ void Venta::setEnvio(bool envio){
     _envio=envio;
 }
 
+void Venta::setFecha(int dia, int mes, int anio){
+    _fecha.setDia(dia);
+    _fecha.setMes(mes);
+    _fecha.setAnio(anio);
+}
+
 int Venta::getIDVenta(){
     return _IDVenta;
 }
 
-int Venta::getIDCliente(){
-    return _idCliente;
+int Venta::getCliente(){
+   return _cliente.getId();
 }
 
 int Venta::getIDVendedor(){
@@ -67,28 +73,32 @@ std::string Venta::getFecha(){
 }
 
 void Venta::cargar(){
-    cout<< "INGRESAR EL ID: ";
+    int dia, mes, anio;
+    char separador;
+    cout<< "INGRESAR EL ID VENTA: ";
     cin>>_IDVenta;
-    cout<< "INGRESAR LA FECHA: ";
+    cout<< "INGRESAR LA FECHA DE LA VENTA: ";
+    cin>> dia >> separador >> mes >> separador >> anio;
+    setFecha(dia, mes, anio);
     cout<< "INGRESE LA FORMA DE PAGO: ";
     cin>>_formaDePago;
     cout<< "INGRESE SI TIENE ENVIO O NO: ";
     cin>>_envio;
     cout << "--------------------------------" << endl;
-    cout<< "INGRESE EL ID DEL CLIENTE: ";
-    cin>>_idCliente;
+    cout<< "INGRESE LOS DATOS DEL CLIENTE: ";
+    _cliente.cargar();
     cout<< "INGRESE EL ID DEL VENDEDOR: ";
     cin>>_idVendedor;
 }
 
 
 void Venta::mostrar(){
-    cout<< "FECHA: "<<getFecha()<<endl;
+    cout<< "FECHA DE LA VENTA: "<<getFecha()<<endl;
     cout<< "ID DE VENTA: "<< getIDVenta() <<endl;
-    cout<< "ID DEL CLIENTE: "<<_idCliente<<endl;
+    cout<< "ID DEL CLIENTE: "<< getCliente()<<endl;
     cout<< "ID DEL VENDEDOR: "<<_idVendedor<<endl;
-    cout<< "FORMA DE PAGO: "<<_formaDePago<<endl;
-    cout<< "TIENE ENVIO O NO: "<<_envio<<endl;
+    cout<< "FORMA DE PAGO: "<<getFormaDePago()<<endl;
+    cout<< "TIENE ENVIO O NO: "<<getEnvio()<<endl;
 }
 
 bool Venta::escribirDisco(int pos){

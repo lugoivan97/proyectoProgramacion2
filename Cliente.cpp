@@ -11,7 +11,9 @@ Cliente::Cliente():Persona(1, "Apellido", "Nombre", _Nacimiento, "123456789", "s
 }
 
 void Cliente::setPuntaje(int Puntaje){
-    _Puntaje=Puntaje;
+    if(_Puntaje>0){
+        _Puntaje=Puntaje;
+    }
 }
 
 int Cliente::getPuntaje(){

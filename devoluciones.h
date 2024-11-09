@@ -6,12 +6,14 @@
 class Devoluciones{
     public:
         Devoluciones();
-        Devoluciones(Producto idProducto, Proveedores idProveedor, Fecha ingresoDevolucion, bool posDevolucion, int cantidadProductos);
+        Devoluciones(Producto& producto);
+        //Devoluciones(Producto idProducto, Proveedores idProveedor, Fecha ingresoDevolucion, bool posDevolucion, int cantidadProductos);
         void setIDProducto(int id);
         void setIngresoDevolucion(int dia, int mes, int anio);
         void setIDProveedor(int idProveedor);
         void setDevolucionRealizada(bool DevolucionRealizada);
         void setcantidadProductos(int cantidadProductos);
+
 
         int getcantidadProductos();
         int getIDProducto();
@@ -19,14 +21,15 @@ class Devoluciones{
         int getIDProveedor();
         bool getDevolucionRealizada();
 
+        void ComparacionID(Producto producto);
         void DevolucionExitosa();
-        void cargar();
+        void cargar(Producto producto);
         void mostrar();
         bool escribirDisco(int pos);
         bool leerDisco(int pos);
 
     private:
-        Producto _idProducto;
+        Producto& _idProducto;
         Proveedores _idProveedor;
         Fecha _ingresoDevolucion;
         bool _DevolucionRealizada;

@@ -6,18 +6,17 @@
 class Venta{
     public:
         Venta();
-        Venta(int idVenta, int idCliente, int idVendedor, char* fp, bool envio, Fecha fecha);
+        Venta(int idVenta, Cliente cliente, int idVendedor, char* fp, bool envio, Fecha fecha);
         void setIDVenta(int id);
-        void setIDCliente(int idCliente);
+        void setCliente();
         void setIDVendedor(int idVendedor);
         void setFormaDePago(char* fp);
         void setEnvio(bool envio);
-        //void setFecha(Fecha fecha);
         void setFecha(int dia, int mes, int anio);
 
         int getIDVenta();
         std::string getFecha();
-        int getIDCliente();
+        int getCliente();
         int getIDVendedor();
         const char* getFormaDePago();
         bool getEnvio();
@@ -29,7 +28,7 @@ class Venta{
 
     private:
         int _IDVenta;
-        int _idCliente;
+        Cliente _cliente;
         int _idVendedor;
         char _formaDePago[50];
         bool _envio;

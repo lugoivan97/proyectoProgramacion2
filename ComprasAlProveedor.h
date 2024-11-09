@@ -5,7 +5,7 @@
 
 class ComprasAlProveedor {
 private:
-    Proveedores _proovedor;
+    Proveedores _proveedor;
     Producto _producto;
     Fecha _fecha;
     int _CantidadProductos;

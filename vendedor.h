@@ -5,11 +5,12 @@
 class Vendedor:public Persona{
 public:
     Vendedor();
-    Vendedor(float comision, float comisionPagada, Fecha fecha);
+    Vendedor(float comision, float comisionPagada, Fecha fechaIngreso);
     void setComisiones(float comision);
     void setComisionPagada(float comisionPagada);
+    void setFechaIngreso(int dia, int mes, int anio);
     float getComisiones();
-    std::string getFecha();
+    std::string getFechaIngreso();
     float getComisionPagada();
     void cargar();
     void mostrar();
@@ -18,5 +19,5 @@ public:
 private:
     float _Comisiones;
     float _ComisionPagada;
-    Fecha _fecha;
+    Fecha _fechaIngreso;
 };

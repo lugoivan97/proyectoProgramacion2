@@ -8,14 +8,14 @@ detalleVenta::detalleVenta(){
     _IDVenta=0;
     _IDProducto=0;
     _cantidad=0;
-    _precioUnitario=0.0f;
+    /*_precioUnitario=0.0f;*/
 }
 
-detalleVenta::detalleVenta(int idVenta, int idProducto, int cantidad, float precioUnitario, Cliente cliente){
+detalleVenta::detalleVenta(int idVenta, int idProducto, int cantidad, Producto producto, Cliente cliente){
     _IDVenta=idVenta;
     _IDProducto=idProducto;
     _cantidad=cantidad;
-    _precioUnitario=precioUnitario;
+    /*_precioUnitario=precioUnitario;*/
     ContarPuntos(cliente, idVenta);
     _puntosGanados = 0;
 }
@@ -25,19 +25,39 @@ void detalleVenta::setIDVenta(int idVenta){
 }
 
 void detalleVenta::setIDProducto(int idProducto){
-    _IDProducto=idProducto;
+    if(idProducto>0){
+        _IDProducto=idProducto;
+    }
 }
 
 void detalleVenta::setCantidad(int cantidad){
-    _cantidad=cantidad;
+   if(cantidad>0){
+        _cantidad=cantidad;
+   }
 }
 
 void detalleVenta::setPuntosGanados(int puntosGanados){
-    _puntosGanados=puntosGanados;
+    if(puntosGanados>0){
+        _puntosGanados=puntosGanados;
+    }
 }
 
-void detalleVenta::setPrecioUnitario(float precioUnitario){
+/*void detalleVenta::setPrecioUnitario(float precioUnitario){
     _precioUnitario=precioUnitario;
+}*/
+
+void detalleVenta::setPrecioTotal(Producto producto){
+    if(getIDProducto()==producto.getIDProducto()){
+        if(_cantidad>0 && producto.getPrecio()>0){
+            _precioTotal=_cantidad*producto.getPrecio();
+        }
+        else {
+            cout<< "CANTIDAD O PRECIO NO VALIDO"<<endl;
+        }
+    }
+    else {
+        cout<< "EL ID NO COINCIDE"<<endl;
+    }
 }
 
 int detalleVenta::getIDVenta(){
@@ -52,13 +72,16 @@ int detalleVenta::getCantidad(){
     return _cantidad;
 }
 
-float detalleVenta::getPrecioUnitario(){
+/*float detalleVenta::getPrecioUnitario(){
     return _precioUnitario;
+}*/
+float detalleVenta::getPrecioTotal(){
+    return _precioTotal;
 }
 
-float detalleVenta::CalcularTotal(){
-    return _cantidad*_precioUnitario;
-}
+/*float detalleVenta::CalcularTotal(Producto producto){
+    return _cantidad*producto.getPrecio();
+}*/
 
 void detalleVenta::ContarPuntos(Cliente& cliente, int idVenta){
     if(getIDVenta()==idVenta){
@@ -87,8 +110,6 @@ void detalleVenta::cargar(){
     cin>>_IDProducto;
     cout<< "CANTIDAD: ";
     cin>>_cantidad;
-    cout<< "PRECIO: $ ";
-    cin>>_precioUnitario;
 }
 
 void detalleVenta::mostrar(){
@@ -96,7 +117,12 @@ void detalleVenta::mostrar(){
     cout<< "ID DE VENTA: "<<getIDVenta()<<endl;
     cout<< "ID DE PRODUCTO: "<<getIDProducto()<<endl;
     cout<< "CANTIDAD: "<<getCantidad()<<endl;
-    cout<< "PRECIO: "<<getPrecioUnitario()<<endl;
+    if(_precioTotal>0){
+        cout<< "PRECIO: $ "<<getPrecioTotal()<<endl;
+    }
+    else{
+        cout<< "EL ID NO COINCIDE"<<endl;
+    }
 }
 
 bool detalleVenta::escribirDisco(int pos){

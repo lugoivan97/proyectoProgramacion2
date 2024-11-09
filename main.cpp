@@ -10,16 +10,17 @@
 #include "productos.h"
 #include "detalleVenta.h"
 #include "devoluciones.h"
+#include "ArchivoProductos.h"
 using namespace std;
 
 int main()
 {
 
-    Cliente cliente1; // Suponiendo que tienes un constructor que inicializa el cliente
+    /*Cliente cliente1; // Suponiendo que tienes un constructor que inicializa el cliente
     // Inicializar puntaje
 
     // Crear una venta asociada a un cliente
-    /*detalleVenta venta1;
+    detalleVenta venta1;
     venta1.cargar();
     cliente1.cargar();
     venta1.actualizarPuntaje(cliente1);
@@ -31,15 +32,24 @@ int main()
 
     persona.mostrar();*/
 
-    Producto producto;
-    Devoluciones devolucion;
-
-    devolucion.cargar();
-    devolucion.mostrar();
-
+    /*Producto producto;
     producto.cargar();
-    producto.mostrar();
+    producto.mostrar();*/
 
+    /*Devoluciones devolucion(producto);  // Pasar el producto por referencia
+    devolucion.cargar();
+    devolucion.mostrar();*/
+
+
+    /*ArchivoProductos archivo("archivoProductos.dat");
+    archivo.listarRegistros();*/
+
+    detalleVenta detalle1;
+    Producto producto;
+    producto.cargar();
+    detalle1.cargar();
+    detalle1.setPrecioTotal(producto);
+    detalle1.mostrar();
 
 
     return 0;

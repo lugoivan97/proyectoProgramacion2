@@ -1,24 +1,46 @@
 #include <iostream>
 #include <cstring>
 #include "Proveedores.h"
-#include "persona.h"
-
+#include <cstring>
 using namespace std;
 
 
-Proveedores::Proveedores(int id):Persona(_Id, _Apellidos, _Nombres, _Nacimiento, _Telefono, _Mail, _Domicilio){
-   _Idproveedor = id;
+Proveedores::Proveedores(){
+    _Idproveedor = 1;
+    strcpy(_Marca, "marca");
+    _Estado= true;
+    strcpy(_Contacto, "contacto");
+    strcpy(_Direccion, "direccion");
 }
 
-Proveedores::Proveedores():Persona(1, "Apellido", "Nombre", _Nacimiento, "123456789", "sistema@gestion.com", "Florida 1234"), _Idproveedor(1) {
+Proveedores::Proveedores(int id, const char* marca, bool estado, const char* contacto, const char* direccion){
+    _Idproveedor=id;
+    strcpy(_Marca, marca);
+    _Estado=estado;
+    strcpy(_Contacto, contacto);
+    strcpy(_Direccion, direccion);
 }
 
 void Proveedores::setIdproveedor(int id){
-    _Idproveedor = id;
+    if(id>0){
+        _Idproveedor = id;
+    }
 }
 
 void Proveedores::setMarca(const char* marca){
     strcpy(_Marca, marca);
+}
+
+void Proveedores::setEstado(bool estado){
+    _Estado=estado;
+}
+
+void Proveedores::setContacto(const char* contacto){
+    strcpy(_Contacto, contacto);
+}
+
+void Proveedores::setDireccionSucursal(const char* direccion){
+    strcpy(_Direccion, direccion);
 }
 
 int Proveedores::getIdproveedor(){
@@ -29,18 +51,37 @@ const char* Proveedores::getMarca(){
     return _Marca;
 }
 
+bool Proveedores::getEstado(){
+    return _Estado;
+}
+
+const char* Proveedores::getContacto(){
+    return _Contacto;
+}
+
+const char* Proveedores::getDireccionSucursal(){
+  return _Direccion;
+}
+
 void Proveedores::cargar(){
-    Persona::cargar();
     cout<< "INGRESAR EL ID DEL PROVEEDOR: ";
     cin>>_Idproveedor;
-    cout<< "INGRESAR LA CATEGORIA: ";
-    //cin>> Categoria.setID();
+    cout<< "INGRESAR LA MARCA: ";
+    cin>>_Marca;
+    cout<< "INGRESAR EL ESTADO: ";
+    cin>>_Estado;
+    cout<< "INGRESAR EL MEDIO DE CONTACTO: ";
+    cin>>_Contacto;
+    cout<< "INGRESAR LA DIRECCION DEL LOCAL/SUCURSAL: ";
+    cin>>_Direccion;
 }
 
 void Proveedores::mostrar(){
-    Persona::mostrar();
-    cout<< "INGRESAR EL ID DEL PROVEEDOR: "<<getIdproveedor()<<endl;
-    //cout<< "CATEGORIA: "<<categoria.getNombreCategoria()<<endl;
+    cout<< "ID DEL PROVEEDOR: "<<getIdproveedor()<<endl;
+    cout<< "MARCA: "<<getMarca()<<endl;
+    cout<< "ESTADO: "<<getEstado()<<endl;
+    cout<< "MEDIO DE CONTACTO: "<<getContacto()<<endl;
+    cout<< "DIRECCION DEL LOCAL/SUCURSAL: "<<getDireccionSucursal()<<endl;
 
 }
 
