@@ -84,11 +84,33 @@ void Devoluciones::cargar(Producto producto){
     char separador;
     cout<< "-------------"<<"DEVOLUCIONES AL PROVEEDOR"<< "-------------"<<endl;
     cout<< "INGRESAR EL ID DEL PRODUCTO: ";
-    cin>>id;
-    _idProducto.setIDProducto(id);
+    while(true){
+        cin>>id;
+        if(cin.fail()){
+        cout<< "INCORRECTO. INTENTA NUEVAMENTE"<<endl;
+        cout<< "INGRESAR EL ID DEL PRODUCTO: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        _idProducto.setIDProducto(id);
+        break;
+    }
+    }
     cout<< "INGRESAR EL ID DEL PROVEEDOR: ";
-    cin>>idproveedor;
-    _idProveedor.setIdproveedor(idproveedor);
+    while(true){
+        cin>>idproveedor;
+        if(cin.fail()){
+        cout<< "INCORRECTO. INTENTA NUEVAMENTE"<<endl;
+        cout<< "INGRESAR EL ID DEL PROVEEDOR: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        _idProveedor.setIdproveedor(idproveedor);
+        break;
+    }
+    }
     cout<< "INGRESAR FECHA DE DEVOLUCION: ";
     cin>> dia >> separador >> mes >> separador >> anio;
     setIngresoDevolucion(dia, mes, anio);

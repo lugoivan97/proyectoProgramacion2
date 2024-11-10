@@ -51,8 +51,13 @@ const char* Proveedores::getMarca(){
     return _Marca;
 }
 
-bool Proveedores::getEstado(){
-    return _Estado;
+const char* Proveedores::getEstado(){
+    if(_Estado){
+        return "PROVEEDOR ACTIVO";
+    }
+    else {
+        return "NO TRABAJA MAS CON NOSOTROS";
+    }
 }
 
 const char* Proveedores::getContacto(){
@@ -65,21 +70,34 @@ const char* Proveedores::getDireccionSucursal(){
 
 void Proveedores::cargar(){
     cout<< "INGRESAR EL ID DEL PROVEEDOR: ";
-    cin>>_Idproveedor;
+    while(true){
+        cin>>_Idproveedor;
+        if(cin.fail()){
+        cout<< "INCORRECTO. INTENTA NUEVAMENTE"<<endl;
+        cout<< "INGRESAR EL ID DEL PROVEEDOR: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        break;
+    }
+    }
     cout<< "INGRESAR LA MARCA: ";
-    cin>>_Marca;
-    cout<< "INGRESAR EL ESTADO: ";
+    cin.ignore();
+    cin.getline(_Marca, 50);
+    cout<< "INGRESAR EL ESTADO(0-INACTIVO, 1-ACTIVO): ";
     cin>>_Estado;
     cout<< "INGRESAR EL MEDIO DE CONTACTO: ";
-    cin>>_Contacto;
+    cin.ignore();
+    cin.getline(_Contacto, 50);
     cout<< "INGRESAR LA DIRECCION DEL LOCAL/SUCURSAL: ";
-    cin>>_Direccion;
+    cin.getline(_Direccion, 100);
 }
 
 void Proveedores::mostrar(){
     cout<< "ID DEL PROVEEDOR: "<<getIdproveedor()<<endl;
     cout<< "MARCA: "<<getMarca()<<endl;
-    cout<< "ESTADO: "<<getEstado()<<endl;
+    cout<< "ESTADO DEL PROVEEDOR: "<<getEstado()<<endl;
     cout<< "MEDIO DE CONTACTO: "<<getContacto()<<endl;
     cout<< "DIRECCION DEL LOCAL/SUCURSAL: "<<getDireccionSucursal()<<endl;
 

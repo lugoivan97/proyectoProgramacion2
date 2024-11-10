@@ -129,17 +129,50 @@ void detalleVenta::RestarStock(Producto& producto, int idProducto, int cantidad)
         int stockAcutal = stockAnterior - cantidad;
         producto.setStock(stockAcutal);
     }else{
-        cout << "EL ID DEL PRODUCTO INGRESADO NO COINCIDE " << endl;
+        cout << "EL ID DEL PRODUCTO INGRESADO NO COINCIDE CON EL INGRESADO" << endl;
     }
 }
 
 void detalleVenta::cargar(Producto& producto){
     cout<< "ID de VENTA: ";
-    cin>>_IDVenta;
+    while(true){
+        cin>>_IDVenta;
+        if(cin.fail()){
+        cout<< "INCORRECTO. INTENTA NUEVAMENTE"<<endl;
+        cout<< "INGRESAR EL ID DE VENTA: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        break;
+    }
+    }
     cout<< "ID de PRODUCTO: ";
-    cin>>_IDProducto;
+    while(true){
+        cin>>_IDProducto;
+        if(cin.fail()){
+        cout<< "INCORRECTO. INTENTA NUEVAMENTE"<<endl;
+        cout<< "INGRESAR EL ID DEL PRODUCTO: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        break;
+    }
+    }
     cout<< "CANTIDAD: ";
-    cin>>_cantidad;
+    while(true){
+        cin>>_cantidad;
+        if(cin.fail()){
+        cout<< "INCORRECTO. INTENTA NUEVAMENTE"<<endl;
+        cout<< "CANTIDAD: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        break;
+    }
+    }
     RestarStock(producto, _IDProducto, _cantidad);
     setPrecioTotal(producto);
 }
@@ -153,7 +186,7 @@ void detalleVenta::mostrar(){
         cout<< "PRECIO TOTAL: $ "<<getPrecioTotal()<<endl;
     }
     else{
-        cout<< "EL ID NO COINCIDE"<<endl;
+        cout<< "EL ID NO COINCIDE CON EL INGRESADO"<<endl;
     }
 }
 

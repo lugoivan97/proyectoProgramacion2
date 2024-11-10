@@ -9,16 +9,14 @@ Venta::Venta(){
     Cliente _cliente;
     _idVendedor=0;
     strcpy(_formaDePago, "fp");
-    _envio=0;
     Fecha _fecha;
 }
 
-Venta::Venta(int idVenta, Cliente cliente, int idVendedor, char* fp, bool envio, Fecha fecha){
+Venta::Venta(int idVenta, Cliente cliente, int idVendedor, char* fp, Fecha fecha){
     _IDVenta=idVenta;
     _cliente=cliente;
     _idVendedor=idVendedor;
     strcpy(_formaDePago, fp);
-    _envio=envio;
     _fecha=fecha;
 }
 
@@ -34,12 +32,21 @@ void Venta::setIDVendedor(int idVendedor){
     _idVendedor=idVendedor;
 }
 
-void Venta::setFormaDePago(char* fp){
-    strcpy(_formaDePago,fp);
-}
-
-void Venta::setEnvio(bool envio){
-    _envio=envio;
+void Venta::setFormaDePago(int fp){
+    switch(fp){
+    case 1:
+            strcpy(_formaDePago,"Efectivo");
+        break;
+    case 2:
+        strcpy(_formaDePago,"Debito");
+        break;
+    case 3:
+        strcpy(_formaDePago,"Credito");
+        break;
+    case 4:
+        strcpy(_formaDePago,"Billetera Virtual");
+        break;
+    }
 }
 
 void Venta::setFecha(int dia, int mes, int anio){
@@ -64,10 +71,6 @@ const char* Venta::getFormaDePago(){
     return _formaDePago;
 }
 
-bool Venta::getEnvio(){
-    return _envio;
-}
-
 std::string Venta::getFecha(){
     return _fecha.toString();
 }
@@ -76,19 +79,39 @@ void Venta::cargar(){
     int dia, mes, anio;
     char separador;
     cout<< "INGRESAR EL ID VENTA: ";
-    cin>>_IDVenta;
+    while(true){
+        cin>>_IDVenta;
+        if(cin.fail()){
+        cout<< "INGRESAR UN NUMERO VALIDO"<<endl;
+        cout<< "INGRESAR EL ID VENTA: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        break;
+    }
+    }
     cout<< "INGRESAR LA FECHA DE LA VENTA: ";
     cin>> dia >> separador >> mes >> separador >> anio;
     setFecha(dia, mes, anio);
-    cout<< "INGRESE LA FORMA DE PAGO: ";
+    cout<< "INGRESE LA FORMA DE PAGO(1-Efectivo, 2-Debito, 3-Credito, 4-Billetera Virtual): ";
     cin>>_formaDePago;
-    cout<< "INGRESE SI TIENE ENVIO O NO: ";
-    cin>>_envio;
     cout << "--------------------------------" << endl;
     cout<< "INGRESE LOS DATOS DEL CLIENTE: ";
     _cliente.cargar();
-    cout<< "INGRESE EL ID DEL VENDEDOR: ";
-    cin>>_idVendedor;
+    cout<< "INGRESE EL DNI DEL VENDEDOR: ";
+    while(true){
+        cin>>_idVendedor;
+        if(cin.fail()){
+        cout<< "INGRESAR UN NUMERO VALIDO"<<endl;
+        cout<< "INGRESE EL DNI DEL VENDEDOR: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        break;
+    }
+    }
 }
 
 
@@ -98,7 +121,6 @@ void Venta::mostrar(){
     cout<< "ID DEL CLIENTE: "<< getCliente()<<endl;
     cout<< "ID DEL VENDEDOR: "<<_idVendedor<<endl;
     cout<< "FORMA DE PAGO: "<<getFormaDePago()<<endl;
-    cout<< "TIENE ENVIO O NO: "<<getEnvio()<<endl;
 }
 
 bool Venta::escribirDisco(int pos){

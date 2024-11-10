@@ -12,7 +12,7 @@ public:
 
     int getIdproveedor();
     const char* getMarca();
-    bool getEstado();
+    const char* getEstado();
     const char* getContacto();
     const char* getDireccionSucursal();
 

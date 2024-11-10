@@ -10,6 +10,7 @@
 #include "productos.h"
 #include "detalleVenta.h"
 #include "devoluciones.h"
+#include "ComprasAlProveedor.h"
 #include "ArchivoProductos.h"
 using namespace std;
 
@@ -51,27 +52,34 @@ int main()
     detalle1.setPrecioTotal(producto);
     detalle1.mostrar();*/
 
-    cout<< "INFORMACION PRODUCTO"<<endl;
+    /*cout<< "INFORMACION PRODUCTO"<<endl;
     Producto producto;
     producto.cargar();
-
+    system("cls");
 
     cout<< "DETALLE DE LA VENTA"<<endl;
-    detalleVenta detalleventa;
+    detalleVenta detalleventa, detalleventa1;
     detalleventa.cargar(producto);
+    detalleventa1.cargar(producto);
+    system("cls");
 
     cout<< "AHORA CARGAMOS LA VENTA"<<endl;
-    Venta venta1;
+    Venta venta1, venta2;
     venta1.cargar();
+    system("cls");
+    venta2.cargar();
 
-
+    system("cls");
     cout<< "CARGAMOS DATOS DEL VENDEDOR"<<endl;
     Vendedor vendedor;
     vendedor.cargar(venta1, detalleventa);
+    vendedor.cargar(venta2, detalleventa1);
+    system("cls");
     vendedor.mostrar();
 
     cout<< "ACTUALIZACION DEL PRODUCTO"<<endl;
-    producto.mostrar();
+    producto.mostrar();*/
+
 
     return 0;
 }

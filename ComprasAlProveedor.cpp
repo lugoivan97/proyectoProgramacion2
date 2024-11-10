@@ -58,20 +58,33 @@ void ComprasAlProveedor::cargar(){
     cin>> dia >> separador >> mes >> separador >> anio;
     setFechaDeCompra(dia, mes, anio);
     cout<< "ID DEL PROVEEDOR: ";
-    cin>>idproveedor;
-    _proveedor.setIdproveedor(idproveedor);
+    while(true){
+        cin>>idproveedor;
+        if(cin.fail()){
+        cout<< "INCORRECTO. INTENTA NUEVAMENTE"<<endl;
+        cout<< "INGRESAR EL ID DEL PROVEEDOR: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        _proveedor.setIdproveedor(idproveedor);
+        break;
+    }
+    }
+    cin.ignore();
     cout<< "MARCA: ";
-    cin>>nombreproveedor;
+    cin.getline(nombreproveedor, 50);
     _proveedor.setMarca(nombreproveedor);
     cout<<"ID DEL PRODUCTO: ";
     cin>>idproducto;
     _producto.setIDProducto(idproducto);
+    cin.ignore();
     cout<< "NOMBRE DEL PRODUCTO: ";
-    cin>>nombreproducto;
+    cin.getline(nombreproducto, 50);
     _producto.setNombre(nombreproducto);
     cout<< "CANTIDAD DE PRODUCTOS COMPRADOS: ";
     cin>>_CantidadProductos;
-    cout<< "PRECIO UNITARIO DEL PRODUCTO: ";
+    cout<< "PRECIO UNITARIO DEL PRODUCTO: $ ";
     cin>>_PrecioUnitario;
 }
 
@@ -82,6 +95,6 @@ void ComprasAlProveedor::mostrar(){
     cout<< "ID DEL PRODUCTO: "<<_producto.getIDProducto()<<endl;
     cout<< "NOMBRE DEL PRODUCTO: "<<_producto.getNombre()<<endl;
     cout<< "CANTIDAD DE PRODUCTOS COMPRADOS: "<<getCantidadProductos()<<endl;
-    cout<< "PRECIO UNITARIO DEL PRODUCTO: "<<getPrecioUnitario()<<endl;
-    cout<< "PRECIO TOTAL: "<<getPrecioTotal()<<endl;
+    cout<< "PRECIO UNITARIO DEL PRODUCTO: $"<<getPrecioUnitario()<<endl;
+    cout<< "PRECIO TOTAL: $"<<getPrecioTotal()<<endl;
 }

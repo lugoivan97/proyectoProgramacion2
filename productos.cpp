@@ -89,7 +89,18 @@ void Producto::cargar(){
     float precio;
     cout << "-----------------" << "INFORMACION DEL PRODUCTO"<< "-----------------" <<endl;
     cout<< "INGRESAR EL ID DEL PRODUCTO: ";
-    cin>>_IDProducto;
+    while(true){
+        cin>>_IDProducto;
+        if(cin.fail()){
+        cout<< "INCORRECTO. INTENTA NUEVAMENTE"<<endl;
+        cout<< "INGRESAR EL ID DEL PRODUCTO: ";
+        cin.clear();
+        cin.ignore();
+    }
+    else{
+        break;
+    }
+    }
     cin.ignore();
     cout<< "INGRESAR NOMBRE DEL PRODUCTO: ";
     cin.getline(_nombre, 100);
