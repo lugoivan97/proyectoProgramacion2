@@ -80,6 +80,9 @@ int main()
     cout<< "ACTUALIZACION DEL PRODUCTO"<<endl;
     producto.mostrar();*/
 
+    Persona persona;
+    persona.cargar();
+    persona.mostrar();
 
     return 0;
 }

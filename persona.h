@@ -19,7 +19,7 @@ public:
     const char* getNombres();
 
     std::string getNacimiento();
-    bool getEstado();
+    const char* getEstado();
     const char* getTelefono();
     const char* getMail();
     const char* getDomicilio();

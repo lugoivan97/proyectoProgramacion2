@@ -20,7 +20,6 @@ Persona::Persona(int id, const char* apellidos, const char* nombres, Fecha nacim
     strcpy (_Telefono, telefono);
     strcpy(_Mail, mail);
     strcpy(_Domicilio, domicilio);
-    _Nacimiento=nacimiento;
 }
 
 void Persona::setId(int id){
@@ -83,8 +82,13 @@ string Persona::getNacimiento(){
     return _Nacimiento.toString();
 }
 
-bool Persona::getEstado(){
-    return _Estado;
+const char* Persona::getEstado(){
+    if(_Estado){
+        return "ACTIVO";
+    }
+    else {
+        return "INACTIVO";
+    }
 }
 
 const char* Persona::getTelefono(){
@@ -131,6 +135,8 @@ void Persona::cargar(){
     setTelefono(_Telefono);
     cout<< "MAIL: ";
     cin>>_Mail;
+    cout<< "ESTADO(0-INACTIVO, 1-ACTIVO): ";
+    cin>>_Estado;
 }
 
 void Persona::mostrar(){
@@ -140,6 +146,7 @@ void Persona::mostrar(){
     cout<< "EL NACIMIENTO ES: "<<getNacimiento()<<endl;
     cout<< "EL TELEFONO ES: "<<getTelefono()<<endl;
     cout<< "EL MAIL ES: "<<getMail()<<endl;
+    cout<< "EL ESTADO DE LA PERSONA ES: "<<getEstado()<<endl;
 }
 
 bool Persona::escribirDisco(int pos){}
