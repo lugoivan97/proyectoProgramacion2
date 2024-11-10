@@ -51,7 +51,7 @@ int main()
     detalle1.setPrecioTotal(producto);
     detalle1.mostrar();*/
 
-    cout<< "INFORMACION PRODUCTO"<<endl;
+    /*cout<< "INFORMACION PRODUCTO"<<endl;
     Producto producto;
     producto.cargar();
 
@@ -71,7 +71,38 @@ int main()
     vendedor.mostrar();
 
     cout<< "ACTUALIZACION DEL PRODUCTO"<<endl;
-    producto.mostrar();
+    producto.mostrar();*/
+
+    Venta venta;
+
+    cout << "CARGAR VENTA " << endl;
+    venta.cargar();
+
+    cout << "MOSTRAR VENTA " << endl;
+    venta.mostrar();
+
+
+
+/*
+    cout<< "INFORMACION PRODUCTO"<<endl;
+    Producto producto;
+    producto.cargar();
+
+
+
+    cout<< "DETALLE DE LA VENTA"<<endl;
+    detalleVenta detalleventa;
+    detalleventa.cargar(producto);
+
+
+
+    cout<< "CARGAMOS DATOS DEL VENDEDOR"<<endl;
+    Vendedor vendedor;
+    vendedor.cargar(venta, detalleventa);
+    vendedor.mostrar();
+
+
+    vendedor.mostrar();*/
 
     return 0;
 }

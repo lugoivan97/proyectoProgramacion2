@@ -6,12 +6,11 @@
 class Venta{
     public:
         Venta();
-        Venta(int idVenta, Cliente cliente, int idVendedor, char* fp, bool envio, Fecha fecha);
+        Venta(int idVenta, Cliente cliente, int idVendedor, char* fp, Fecha fecha);
         void setIDVenta(int id);
         void setCliente();
         void setIDVendedor(int idVendedor);
-        void setFormaDePago(char* fp);
-        void setEnvio(bool envio);
+        void setFormaDePago(int fp);
         void setFecha(int dia, int mes, int anio);
 
         int getIDVenta();
@@ -19,7 +18,6 @@ class Venta{
         int getCliente();
         int getIDVendedor();
         const char* getFormaDePago();
-        bool getEnvio();
 
         void cargar();
         void mostrar();
@@ -31,6 +29,5 @@ class Venta{
         Cliente _cliente;
         int _idVendedor;
         char _formaDePago[50];
-        bool _envio;
         Fecha _fecha;
 };

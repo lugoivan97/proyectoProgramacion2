@@ -10,8 +10,12 @@ public:
     Vendedor(float comision, Fecha fechaIngreso);
     void setComisiones(Venta& venta, detalleVenta& detalleVenta);
     void setFechaIngreso(int dia, int mes, int anio);
+    void setComisionTotalDelMes();
+
+    float getComisionTotalDelMes();
     float getComisiones();
     std::string getFechaIngreso();
+
     void cargar(Venta& venta, detalleVenta& detalleVenta);
     void mostrar();
     bool escribirDisco(int pos);

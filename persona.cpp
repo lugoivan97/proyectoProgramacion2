@@ -20,7 +20,6 @@ Persona::Persona(int id, const char* apellidos, const char* nombres, Fecha nacim
     strcpy (_Telefono, telefono);
     strcpy(_Mail, mail);
     strcpy(_Domicilio, domicilio);
-    _Nacimiento=nacimiento;
 }
 
 void Persona::setId(int id){
