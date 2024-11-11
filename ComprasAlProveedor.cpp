@@ -3,9 +3,10 @@
 #include <iostream>
 using namespace std;
 
-ComprasAlProveedor::ComprasAlProveedor(){}
+ComprasAlProveedor::ComprasAlProveedor(Producto& producto):_producto(producto){
+}
 
-ComprasAlProveedor::ComprasAlProveedor(int CantidadProductos, float PrecioUnitario, float PrecioTotal){
+ComprasAlProveedor::ComprasAlProveedor(Producto& producto, int CantidadProductos, float PrecioUnitario, float PrecioTotal): _producto(producto){
     _CantidadProductos=CantidadProductos;
     _PrecioUnitario=PrecioUnitario;
     _PrecioTotal=PrecioTotal;
@@ -51,7 +52,18 @@ string ComprasAlProveedor::getFechaDeCompra(){
     return _fecha.toString();
 }
 
-void ComprasAlProveedor::cargar(){
+void ComprasAlProveedor::SumaDeStock(Producto& producto){
+    if(producto.getIDProducto()==_producto.getIDProducto()){
+        int stockAnterior=producto.getStock();
+        int stockActual=stockAnterior+_CantidadProductos;
+        _producto.setStock(stockActual);
+    }
+    else {
+        cout<< "ID DE PRODUCTO NO ENCONTRADO"<<endl;
+    }
+}
+
+void ComprasAlProveedor::cargar(Producto producto){
     int idproveedor, idproducto, dia, mes, anio;
     char nombreproveedor[50], nombreproducto[50], separador;
     cout<< "FECHA DE COMPRA: ";
@@ -86,6 +98,7 @@ void ComprasAlProveedor::cargar(){
     cin>>_CantidadProductos;
     cout<< "PRECIO UNITARIO DEL PRODUCTO: $ ";
     cin>>_PrecioUnitario;
+    SumaDeStock(producto);
 }
 
 void ComprasAlProveedor::mostrar(){

@@ -14,7 +14,7 @@ class Producto{
         void setDescripcion(char* descripcion);
         void setFecha(int dia, int mes, int anio);
 
-        int actualizarStock(int stockNuevo);
+        void actualizarStock(int stockNuevo);
         std::string getFecha();
         int getIDProducto();
         const char* getNombre();

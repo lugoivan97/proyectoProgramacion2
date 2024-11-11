@@ -11,4 +11,5 @@
     //ArchivoProductos(const char *nombreArchivoProducto);
     bool grabarRegistroProducto(Producto producto);
     bool listarRegistros();
+    bool buscarProducto();
 };

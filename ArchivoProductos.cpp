@@ -46,27 +46,48 @@ bool ArchivoProductos::listarRegistros(){
     }
     cout << left << setw(10) << "ID"
          << setw(30) << "NOMBRE"
-         << setw(30) << "DESCRIPCION"
-         << setw(10) << "PRECIO"
+         << setw(35) << "DESCRIPCION"
+         << setw(12) << "PRECIO"
          << setw(15) << "STOCK"
          << setw(17) << "FECHA"
          << endl;
-    cout << string(95, '-') << endl;
+    cout << string(105, '-') << endl;
 
 
     while(fread(&producto, sizeof(Producto), 1, listadoProductos)==1){
 
              cout << left << setw(10) << producto.getIDProducto()
              << setw(30) << producto.getNombre()
-             << setw(30) << producto.getDescripcion()
-             << setw(10) << fixed << setprecision(2) << producto.getPrecio()
+             << setw(35) << producto.getDescripcion()
+             << setw(12) << fixed << setprecision(2) << producto.getPrecio()
              << setw(15) << producto.getStock()
              << setw(17) << producto.getFecha()
              << endl;
-    while(fread(&producto, sizeof(Producto), 1, listadoProductos)==1){
-        producto.mostrar();
-        cout<<endl;
     }
     fclose(listadoProductos);
     return true;
-}}
+}
+
+bool ArchivoProductos::buscarProducto(){
+    FILE *buscarProducto;
+    Producto producto;
+    buscarProducto=fopen(_nombreArchivoProductos, "rb");
+    buscarProducto=fopen("ArchivoProductos.dat", "rb");
+    if(buscarProducto==NULL){
+        cout<< "NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+        return false;
+    }
+    int id;
+    cout<< "INGRESAR EL ID DEL PRODUCTO A BUSCAR: ";
+    cin>>id;
+    while(fread(&producto, sizeof(Producto), 1, buscarProducto)==1){
+        if(producto.getIDProducto()==id){
+            producto.mostrar();
+            fclose(buscarProducto);
+            return true;
+        }
+    }
+    cout<< "PRODUCTO NO ENCONTRADO"<<endl;
+    fclose(buscarProducto);
+    return false;
+}

@@ -77,15 +77,15 @@ const char* Producto::getDescripcion(){
     return _descripcion;
 }
 
-int Producto::actualizarStock(int stocknuevo){
+void Producto::actualizarStock(int stocknuevo){
      if(stocknuevo >= 0) {
         _stock = stocknuevo;
     }
 }
 
 void Producto::cargar(){
-    int dia, mes, anio, IDProducto, stock;
-    char separador, nombre[100], descripcion[200];
+    int dia, mes, anio, stock;
+    char separador;
     float precio;
     cout << "-----------------" << "INFORMACION DEL PRODUCTO"<< "-----------------" <<endl;
     cout<< "INGRESAR EL ID DEL PRODUCTO: ";

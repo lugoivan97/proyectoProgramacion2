@@ -6,15 +6,15 @@
 class ComprasAlProveedor {
 private:
     Proveedores _proveedor;
-    Producto _producto;
+    Producto& _producto;
     Fecha _fecha;
     int _CantidadProductos;
     float _PrecioUnitario;
     float _PrecioTotal;
 
 public:
-    ComprasAlProveedor();
-    ComprasAlProveedor(int CantidadProductos, float PrecioUnitario, float PrecioTotal);
+    ComprasAlProveedor(Producto& producto);
+    ComprasAlProveedor(Producto& producto, int CantidadProductos, float PrecioUnitario, float PrecioTotal);
     void setCantidadProductos(int CantidadProductos);
     void setPrecioUnitario(float PrecioUnitario);
     void setPrecioTotal(float PrecioTotal);
@@ -24,7 +24,8 @@ public:
     float getPrecioUnitario();
     float getPrecioTotal();
     std::string getFechaDeCompra();
+    void SumaDeStock(Producto& producto);
 
-    void cargar();
+    void cargar(Producto producto);
     void mostrar();
 };

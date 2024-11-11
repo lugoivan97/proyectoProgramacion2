@@ -76,7 +76,7 @@ std::string Venta::getFecha(){
 }
 
 void Venta::cargar(){
-    int dia, mes, anio, fp;
+    int dia, mes, anio;
     char separador;
     cout<< "INGRESAR EL ID VENTA: ";
     while(true){
