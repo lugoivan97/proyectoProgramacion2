@@ -12,20 +12,26 @@
 #include "devoluciones.h"
 #include "ComprasAlProveedor.h"
 #include "ArchivoProductos.h"
+#include "ArchivoComprasAlProveedor.h"
+#include "ArchivoDevoluciones.h"
 using namespace std;
 
 int main()
 {
-    /*ArchivoProductos archivo("archivoProductos.dat");
+    ArchivoProductos archivo("archivoProductos.dat");
+    /*for(int i=0; i<5; i++){
+        archivo.agregarRegistro();
+        system("cls");
+    }*/
     archivo.listarRegistros();
-    archivo.buscarProducto();*/
 
-    Producto producto;
-    producto.cargar();
+    ArchivoComprasAlProveedor archivoCOMPRAS("archivoComprasAlProveedor.dat");
+    /*archivoCOMPRAS.agregarRegistro();*/
+    /*archivoCOMPRAS.listarCompras();*/
 
-    ComprasAlProveedor compras(producto);
-    compras.cargar(producto);
-    producto.mostrar();
-
+    ArchivoDevoluciones devolucion("archivoDevoluciones.dat");
+    /*devolucion.agregarDevolucion();*/
+    devolucion.listarDevoluciones();
     return 0;
+
 }

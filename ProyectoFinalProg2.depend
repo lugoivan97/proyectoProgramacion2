@@ -10,19 +10,19 @@
 	"Cliente.h"
 	"productos.h"
 
-1731283919 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.cpp
+1731614795 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.cpp
 	"devoluciones.h"
 	<cstring>
 	<string>
 	<iostream>
 	"productos.h"
 
-1731156581 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.h
+1731608816 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\devoluciones.h
 	"FECHA.h"
 	"proveedores.h"
 	"productos.h"
 
-1731285573 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\main.cpp
+1731618574 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\main.cpp
 	<iostream>
 	<cstring>
 	"cliente.h"
@@ -37,8 +37,10 @@
 	"devoluciones.h"
 	"ComprasAlProveedor.h"
 	"ArchivoProductos.h"
+	"ArchivoComprasAlProveedor.h"
+	"ArchivoDevoluciones.h"
 
-1731279608 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\productos.cpp
+1731615283 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\productos.cpp
 	"productos.h"
 	<limits>
 	<cstring>
@@ -390,26 +392,26 @@
 	<cstring>
 	<iostream>
 
-1731285550 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\comprasalproveedor.cpp
+1731608008 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\comprasalproveedor.cpp
 	"ComprasAlProveedor.h"
 	<cstring>
 	<iostream>
 
-1731285550 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\comprasalproveedor.h
+1731608528 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\comprasalproveedor.h
 	"proveedores.h"
 	"productos.h"
 	"devoluciones.h"
 
 1730935874 D
 
-1731281908 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\archivoproductos.cpp
+1731606895 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\archivoproductos.cpp
 	"ArchivoProductos.h"
 	<cstring>
 	<iostream>
 	<iomanip>
 	<fstream>
 
-1731281204 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\archivoproductos.h
+1731584316 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\archivoproductos.h
 	"productos.h"
 
 1730762722 source:c:\users\administrator\onedrive\documentos\proyecto_progra_ii\proyectoprogramacion2\categoria.cpp
@@ -666,4 +668,28 @@
 	"venta.h"
 	<cstring>
 	<iostream>
+
+1731616743 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\archivocomprasalproveedor.cpp
+	"ArchivoComprasAlProveedor.h"
+	<cstring>
+	<iostream>
+	<iomanip>
+	<fstream>
+
+1731604884 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\archivocomprasalproveedor.h
+	"ComprasAlProveedor.h"
+	"ArchivoProductos.h"
+
+1731618593 source:c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\archivodevoluciones.cpp
+	"ArchivoDevoluciones.h"
+	<cstring>
+	<iostream>
+	<iomanip>
+	<fstream>
+
+1731596261 c:\users\lucia\downloads\programacionproyectotpi\proyectoprogramacion2\archivodevoluciones.h
+	"productos.h"
+	"devoluciones.h"
+	"proveedores.h"
+	"ArchivoProductos.h"
 

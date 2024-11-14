@@ -11,5 +11,9 @@
     //ArchivoProductos(const char *nombreArchivoProducto);
     bool grabarRegistroProducto(Producto producto);
     bool listarRegistros();
-    bool buscarProducto();
+    bool buscarProductoPorID();
+    bool buscarPRODUCTOID(int id, Producto& producto);
+    bool buscarProductoPorNombre();
+    bool modificarPrecioProducto();
+    bool actualizarProducto(Producto& producto);
 };

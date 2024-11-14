@@ -31,9 +31,7 @@ void Devoluciones::setDevolucionRealizada(bool DevolucionRealizada){
 }
 
 void Devoluciones::setcantidadProductos(int cantidadProductos){
-    if(cantidadProductos>0){
         _cantidadProductos=cantidadProductos;
-    }
 }
 
 int Devoluciones::getIDProducto(){
@@ -61,6 +59,9 @@ void Devoluciones::DevolucionExitosa(){
                  int stockActual = _idProducto.getStock();
                  int cantidadADevolver = getcantidadProductos();
                  int nuevoStock = stockActual - cantidadADevolver;
+                 if(nuevoStock<0){
+                    cout<< "ERROR"<<endl;
+                 }
                  _idProducto.actualizarStock(nuevoStock);
                  cout<< "LA DEVOLUCION FUE REALIZADA CON EXITO"<<endl;
     }
@@ -74,7 +75,7 @@ void Devoluciones::ComparacionID(Producto producto){
             DevolucionExitosa();
             mostrar();
     }else{
-        cout << "PRODUCTO NO ENCONTRADO" << endl;
+        cout << "EL PRODUCTO "<<_idProducto.getIDProducto()<<"NO COINCIDE"<< endl;
     }
 }
 
@@ -119,17 +120,26 @@ void Devoluciones::cargar(Producto producto){
     setcantidadProductos(cantidadProductos);
     cout<< "¿DESEA FINALIZAR LA DEVOLUCION? "<< "0-NO 1-SI "<<endl;
     cin>>confirmacion;
-    ComparacionID(producto);
-    //DevolucionExitosa();
+    if(confirmacion==1){
+        setDevolucionRealizada(1);
+        ComparacionID(producto);
+    }
+    else {
+        setDevolucionRealizada(0);
+        cout<< "LA DEVOLUCION FUE CANCELADA"<<endl;
+    }
+    /*DevolucionExitosa():*/
 }
+
 
 void Devoluciones::mostrar(){
     cout<< "-------------"<<"DEVOLUCIONES AL PROVEEDOR"<< "-------------"<<endl;
     cout<< "ID DEL PRODUCTO: "<<_idProducto.getIDProducto()<<endl;
     cout<< "ID DEL PROVEEDOR: "<<_idProveedor.getIdproveedor()<<endl;
     cout<< "FECHA DE DEVOLUCION: "<<getIngresoDevolucion()<<endl;
+    cout<< "CANTIDAD DE PRODUCTOS A DEVOLVER: "<<getcantidadProductos()<<endl;
 
-    cout<< _idProducto.getStock();
+    /*cout<< "STOCK ACTUAL: "<<_idProducto.getStock()<<endl;*/
 }
 
 bool Devoluciones::leerDisco(int pos){

@@ -39,7 +39,7 @@ bool ArchivoProductos::listarRegistros(){
     FILE *listadoProductos;
     Producto producto;
     listadoProductos=fopen(_nombreArchivoProductos, "rb");
-    listadoProductos=fopen("ArchivoProductos.dat", "rb");
+    listadoProductos=fopen("archivoProductos.dat", "rb");
     if(listadoProductos==NULL){
         cout<< "NO SE PUDO ABRIR EL ARCHIVO"<<endl;
         return false;
@@ -51,7 +51,7 @@ bool ArchivoProductos::listarRegistros(){
          << setw(15) << "STOCK"
          << setw(17) << "FECHA"
          << endl;
-    cout << string(105, '-') << endl;
+    cout << string(110, '-') << endl;
 
 
     while(fread(&producto, sizeof(Producto), 1, listadoProductos)==1){
@@ -68,7 +68,7 @@ bool ArchivoProductos::listarRegistros(){
     return true;
 }
 
-bool ArchivoProductos::buscarProducto(){
+bool ArchivoProductos::buscarProductoPorID(){
     FILE *buscarProducto;
     Producto producto;
     buscarProducto=fopen(_nombreArchivoProductos, "rb");
@@ -89,5 +89,99 @@ bool ArchivoProductos::buscarProducto(){
     }
     cout<< "PRODUCTO NO ENCONTRADO"<<endl;
     fclose(buscarProducto);
+    return false;
+}
+
+bool ArchivoProductos::buscarProductoPorNombre(){
+    FILE *buscarProductoNombre;
+    Producto producto;
+    buscarProductoNombre=fopen(_nombreArchivoProductos, "rb");
+    buscarProductoNombre=fopen("ArchivoProductos.dat", "rb");
+    if(buscarProductoNombre==NULL){
+        cout<< "NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+        return false;
+    }
+    char nombre[100];
+    cout<< "INGRESAR EL NOMBRE DEL PRODUCTO A BUSCAR: ";
+    cin.getline(nombre, 100);
+    while(fread(&producto, sizeof(Producto), 1, buscarProductoNombre)==1){
+        if(strcmp(producto.getNombre(), nombre) == 0){
+            producto.mostrar();
+            fclose(buscarProductoNombre);
+            return true;
+        }
+    }
+    cout<< "PRODUCTO NO ENCONTRADO"<<endl;
+    fclose(buscarProductoNombre);
+    return false;
+}
+
+bool ArchivoProductos::modificarPrecioProducto(){
+    FILE *modificarPrecio;
+    Producto producto;
+    modificarPrecio=fopen(_nombreArchivoProductos, "rb+");
+    if(modificarPrecio==NULL){
+        cout<< "NO PUDO ABRIRSE EL ARCHIVO"<<endl;
+        return false;
+    }
+    int id;
+    cout<< "INGRESAR EL ID DEL PRODUCTO PARA MODIFICAR EL PRECIO: ";
+    cin>>id;
+    while(fread(&producto, sizeof(Producto), 1, modificarPrecio)==1){
+        if(producto.getIDProducto()==id){
+        producto.mostrar();
+        float NuevoPrecio;
+        cout<< "INGRESAR EL NUEVO PRECIO: ";
+        cin>>NuevoPrecio;
+        producto.setPrecio(NuevoPrecio);
+
+        fseek(modificarPrecio, -sizeof(Producto), SEEK_CUR);
+        fwrite(&producto, sizeof(producto), 1, modificarPrecio);
+        cout<< "PRODUCTO MODIFICADO"<<endl;
+        return true;
+
+    }
+    }
+
+    cout<< "PRODUCTO NO ENCONTRADO"<<endl;
+    fclose(modificarPrecio);
+    return false;
+}
+
+bool ArchivoProductos::buscarPRODUCTOID(int id, Producto& producto){
+    FILE *buscarProducto;
+    buscarProducto=fopen(_nombreArchivoProductos, "rb");
+    if(buscarProducto==NULL){
+        cout<< "NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+        return false;
+    }
+    while(fread(&producto, sizeof(Producto), 1, buscarProducto)==1){
+        if(producto.getIDProducto()==id){
+            fclose(buscarProducto);
+            return true;
+        }
+    }
+    cout<< "PRODUCTO NO ENCONTRADO"<<endl;
+    fclose(buscarProducto);
+    return false;
+}
+
+bool ArchivoProductos::actualizarProducto(Producto& producto){
+    FILE *archivo=fopen(_nombreArchivoProductos, "rb+");
+    if(archivo==nullptr){
+        cout<< "NO SE PUDO ABRIR EL ARCHIVO PRODUCTOS"<<endl;
+        return false;
+    }
+    Producto prod;
+    while(fread(&prod, sizeof(Producto), 1, archivo)==1){
+        if(prod.getIDProducto()==producto.getIDProducto()){
+            fseek(archivo, -sizeof(Producto), SEEK_CUR);
+            fwrite(&producto, sizeof(Producto), 1, archivo);
+            fclose(archivo);
+            return true;
+    }
+
+    }
+    fclose(archivo);
     return false;
 }

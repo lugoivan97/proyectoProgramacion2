@@ -13,7 +13,7 @@ Producto::Producto(): _fecha(){
 }
 
 Producto::Producto(int id, char* nombre, float precio, int stock, char* descripcion, Fecha fecha){
-    _IDProducto=id;
+    setIDProducto(id);
     strcpy(_nombre, nombre);
     _precio=precio;
     _stock=stock;
@@ -38,9 +38,7 @@ void Producto::setPrecio(float precio){
 }
 
 void Producto::setStock(int stock){
-        if(stock > 0){
-            _stock=stock;
-        }
+    _stock=stock;
 }
 
 void Producto::setDescripcion(char* descripcion){
@@ -77,9 +75,9 @@ const char* Producto::getDescripcion(){
     return _descripcion;
 }
 
-void Producto::actualizarStock(int stocknuevo){
-     if(stocknuevo >= 0) {
-        _stock = stocknuevo;
+void Producto::actualizarStock(int nuevoStock){
+     if(nuevoStock >= 0) {
+        _stock = nuevoStock;
     }
 }
 
